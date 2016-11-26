@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -50,7 +49,7 @@ public class CordanceSpliter {
 
             int lineNum = 0;
 
-            String newWord = wordScanner.next();
+            String newWord;
             //Set the deliminator
             wordScanner.useDelimiter("--|\\n|\\p{javaWhitespace}+");
 
@@ -58,6 +57,13 @@ public class CordanceSpliter {
             while(wordScanner.hasNext()){
                 lineNum++;
                 newWord = wordScanner.next();
+
+                //If it is an EMPTY place a null.
+                if(newWord == ""){
+                    newWord = null;
+                }
+
+
                 System.out.println("Line " + lineNum + " " + newWord);
 
             }

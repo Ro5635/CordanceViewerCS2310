@@ -8,7 +8,7 @@ import javax.swing.text.Position;
 
 
 public class CordanceVeiwer {
-	
+
 	private ArrayList<String> wordIndex;// the arraylist of all words in the book in order
 	private HashMap<String, ArrayList<Integer>> wordCataloge;// the hashmap of all the different words with there indexes 
 	//the first element int he arraylist of the hashmap is the chapter in the book
