@@ -1,4 +1,4 @@
-package src.Cordance;
+package cordance;
 
 public class CordanceViewer {
 
