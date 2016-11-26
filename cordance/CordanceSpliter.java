@@ -4,8 +4,10 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 /**
  * Cordance Spliter
@@ -38,18 +40,21 @@ public class CordanceSpliter {
 
         //Create a new buffered reader
         BufferedReader buffRead = null;
+        Scanner wordScanner = null;
 
         try{
 
             buffRead = new BufferedReader( new FileReader( fileLocation ) );
+            wordScanner = new Scanner(buffRead);
+
 
             int lineNum = 0;
 
-            String newLine = buffRead.readLine();
+            String newWord = wordScanner.next();
 
-            while(newLine != null){
-                System.out.println("Line " + lineNum + newLine);
-                newLine = buffRead.readLine();
+            while(newWord != null){
+                System.out.println("Line " + lineNum + " " + newWord);
+                newWord = wordScanner.next();
                 lineNum++;
             }
 
@@ -86,6 +91,7 @@ public class CordanceSpliter {
     public ArrayList getWordIndex(){
 
 
+        return new ArrayList(33);
 
     }
 
@@ -93,6 +99,17 @@ public class CordanceSpliter {
      *  Get's the word catalogue for the cordance.
      */
     public HashMap getWordCatalogue(){
+
+        return new HashMap();
+    }
+
+
+
+    public static void main(String args[]){
+
+        CordanceSpliter cs = new CordanceSpliter("/Users/robert/Desktop/abook.txt");
+
+
 
 
     }
