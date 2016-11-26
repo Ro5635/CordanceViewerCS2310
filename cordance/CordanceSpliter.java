@@ -51,11 +51,15 @@ public class CordanceSpliter {
             int lineNum = 0;
 
             String newWord = wordScanner.next();
+            //Set the deliminator
+            wordScanner.useDelimiter("--|\\n|\\p{javaWhitespace}+");
 
-            while(newWord != null){
-                System.out.println("Line " + lineNum + " " + newWord);
-                newWord = wordScanner.next();
+
+            while(wordScanner.hasNext()){
                 lineNum++;
+                newWord = wordScanner.next();
+                System.out.println("Line " + lineNum + " " + newWord);
+
             }
 
 
