@@ -27,11 +27,11 @@ public class CordanceVeiwer {
 		//loop through the hashmaps arraylist of indexes of word positions
 		for(Integer currentPos:temp ){
 			cordance += "\r";
+			cordance += positionName.get(currentPos.intValue());
 			//writes the cordance for the num of words left and right
 			for (int i = currentPos.intValue() - num ;i<currentPos.intValue() + num;i++){
 				if(wordIndex.get(i) != null){
-					cordance += positionName.get(i);
-					cordance += wordIndex.get(i);		
+					cordance += wordIndex.get(i) + " ";		
 				}
 			}
 		}
