@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-public class CordanceVeiwerData {
+public class CordanceVeiwer {
 	
 	private ArrayList<String> wordIndex;// the arraylist of all words in the book in order
 	private HashMap<String, ArrayList<Int>> wordCataloge;// the hashmap of all the different words with there indexes 
 	//the first element int he arraylist of the hashmap is the chapter in the book
 	
-	public CordanceVeiwerData(ArrayList<String> passedWordIndex, HashMap<String, ArrayList<int>> passedWordCataloge ) {
+	public CordanceVeiwer(ArrayList<String> passedWordIndex, HashMap<String, ArrayList<int>> passedWordCataloge ) {
 		wordIndex = passedWordIndex;
 		wordCataloge = passedWordCataloge;
 	}
@@ -27,7 +27,7 @@ public class CordanceVeiwerData {
 		}
 		return cordance;
 	}
-	public setData(ArrayList<String> passedWordIndexer, HashMap<String, ArrayList<int>> passedWordCataloge ) {
+	public CordanceVeiwer(ArrayList<String> passedWordIndexer, HashMap<String, ArrayList<int>> passedWordCataloge ) {
 		wordIndexer = passedWordIndexer;
 		wordCataloge = passedWordCataloge;
 	}
