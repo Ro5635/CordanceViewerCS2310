@@ -26,6 +26,11 @@ public class CordanceSpliter {
      */
     private HashMap wordCataogue;
 
+    /**
+     * Array list of descriptions of the differnt postions avalible in the book.
+     */
+    private ArrayList positionName;
+
 
 
 
@@ -40,6 +45,16 @@ public class CordanceSpliter {
         //Create a new buffered reader
         BufferedReader buffRead = null;
         Scanner wordScanner = null;
+
+        /*
+        Initialise the variable to place the data into
+        TO DO
+
+        Use huristics based on the file size to estimate a suitable initial capacity, for now set
+        a resonable number....
+        */
+        wordIndex = new ArrayList<String>(200000);
+
 
         try{
 
@@ -58,13 +73,21 @@ public class CordanceSpliter {
                 lineNum++;
                 newWord = wordScanner.next();
 
-                //If it is an EMPTY place a null.
-                if(newWord == ""){
-                    newWord = null;
+                //If it is an new line place a null.
+
+                //REGEX find blank lines or length == 0 speed comparison
+                //if( wordScanner.findInLine("\\A\\S") == null){
+                if(newWord.length() == 0){
+
+                    wordIndex.add(null);
+
+                }else{
+
+                    wordIndex.add(newWord);
                 }
 
 
-                System.out.println("Line " + lineNum + " " + newWord);
+
 
             }
 
@@ -113,6 +136,18 @@ public class CordanceSpliter {
         return new HashMap();
     }
 
+    /**
+     * Gets the array of differnt positions avalible in the application.
+     * @return ArrayList<String> descriptions of the different positions in the book
+     */
+    public ArrayList getPositionName(){
+
+
+
+
+        return new ArrayList(33);
+
+    }
 
 
     public static void main(String args[]){
