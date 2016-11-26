@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -24,7 +26,7 @@ public class CordanceSpliter {
      * Contains each unique word in the system and the indexes for which the word appear in wordIndex.
      * @see ArrayList wordIndex
      */
-    private HashMap wordCataogue;
+    private HashMap<String, ArrayList<Integer>> wordCataogue;
 
     /**
      * Array list of descriptions of the differnt postions avalible in the book.
@@ -56,13 +58,25 @@ public class CordanceSpliter {
         wordIndex = new ArrayList<String>(200000);
 
 
+        /**
+         * Initilaise the wordCatalogue
+         *
+         * TO DO
+
+         Use huristics based on the file size to estimate a suitable initial capacity, for now set
+         a resonable number....
+         */
+        wordCataogue = new HashMap<String, ArrayList<Integer>>(400);
+
+
+
         try{
 
             buffRead = new BufferedReader( new FileReader( fileLocation ) );
             wordScanner = new Scanner(buffRead);
 
 
-            int lineNum = 0;
+            Integer arrayPosition = 0;
 
             String newWord;
             //Set the deliminator
@@ -70,7 +84,7 @@ public class CordanceSpliter {
 
 
             while(wordScanner.hasNext()){
-                lineNum++;
+
                 newWord = wordScanner.next();
 
                 //If it is an new line place a null.
@@ -80,17 +94,50 @@ public class CordanceSpliter {
                 if(newWord.length() == 0){
 
                     wordIndex.add(null);
+                    //Increment the array index
+                    arrayPosition++;
 
                 }else{
 
+
                     wordIndex.add(newWord);
+                    //Increment the array index
+                    arrayPosition++;
+
+                }
+
+
+
+                //Add to word catalogue
+
+                //is the word in the wordCatalogue allready
+                if( wordCataogue.containsKey(newWord) ){
+                    //Add the new index to the existing record
+                    ArrayList<Integer> existingIndex = (ArrayList<Integer>) wordCataogue.get(newWord);
+                    existingIndex.add(arrayPosition);
+
+                    wordCataogue.put(newWord , existingIndex);
+
+                }else{
+                    //Create the new record
+
+                    ArrayList<Integer> newIndexArray = new ArrayList<Integer>();
+
+                    int positionDescriptionIndex = 0;//TMP
+
+                    newIndexArray.add(positionDescriptionIndex);
+                    newIndexArray.add(arrayPosition);
+
+                    wordCataogue.put(newWord, newIndexArray );
+
+
                 }
 
 
 
 
             }
-
+//            System.out.println( wordIndex.toString() );
 
 
         }catch (FileNotFoundException e) {
@@ -102,17 +149,7 @@ public class CordanceSpliter {
             e.printStackTrace();
             System.exit(1);
 
-        }catch (IOException e){
-
-            System.out.println("IO Exception");
-
-
         }
-
-
-
-
-
 
 
     }
@@ -124,7 +161,7 @@ public class CordanceSpliter {
     public ArrayList getWordIndex(){
 
 
-        return new ArrayList(33);
+        return wordIndex;
 
     }
 
@@ -133,7 +170,7 @@ public class CordanceSpliter {
      */
     public HashMap getWordCatalogue(){
 
-        return new HashMap();
+        return wordCataogue;
     }
 
     /**
@@ -154,8 +191,12 @@ public class CordanceSpliter {
 
         CordanceSpliter cs = new CordanceSpliter("/Users/robert/Desktop/abook.txt");
 
+        HashMap testCat = cs.getWordCatalogue();
+        ArrayList testlist = cs.getWordIndex();
 
+        ArrayList testarray = (ArrayList) testCat.get("flatter");
 
+        System.out.println( testlist.get( (Integer) testarray.get(1) ));
 
     }
 
