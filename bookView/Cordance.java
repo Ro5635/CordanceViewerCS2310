@@ -2,6 +2,9 @@ package bookView;
  
 
  
+import java.util.Spliterator;
+import java.util.SplittableRandom;
+
 import cordance.CordanceSpliter;
  
 import cordance.CordanceVeiwer;
@@ -33,17 +36,18 @@ public class Cordance implements Controller{
    * the default cordance size is 10 so its default is 10
    * @param filelocation
    */
-  Cordance(String filelocation){
+  Cordance(){
  
     currentSize = 10;
  
     currentWord = "";
  
-    cordanceSpliter = new CordanceSpliter(filelocation);
  
   }
  
-  
+  void SetFileLocation( String fileLocation){
+	  cordanceSpliter = new CordanceSpliter(fileLocation);
+  }
  
   @Override
   /**
@@ -52,15 +56,19 @@ public class Cordance implements Controller{
    * 
    */
   public String getKWIC(String word) {
- 
-    currentWord = word;
- 
-    currentSize = 10;
- 
-    cordanceVeiwer = new CordanceVeiwer(cordanceSpliter.getWordIndex(),cordanceSpliter.getWordCatalogue(),cordanceSpliter.getPositionName());
- 
-    return cordanceVeiwer.getCordance(currentWord, new Integer(10));
- 
+	String value = "";
+    if(cordanceSpliter != null){
+
+        currentWord = word;
+     
+        currentSize = 10;
+     
+        cordanceVeiwer = new CordanceVeiwer(cordanceSpliter.getWordIndex(),cordanceSpliter.getWordCatalogue(),cordanceSpliter.getPositionName());
+        value =cordanceVeiwer.getCordance(currentWord, new Integer(10));      
+    }else{
+    	value = "file not valid please fix.";
+    }
+    return value;
   }
  
 
@@ -70,15 +78,19 @@ public class Cordance implements Controller{
   * returns the cordance with the supplied word and size
   */
   public String getKWIC(String word, int contextSize) {
+	  String value = "";
+	  if(cordanceSpliter != null){
+		currentSize = contextSize;
  
-    currentSize = contextSize;
+    	currentWord = word;
  
-    currentWord = word;
+    	cordanceVeiwer = new CordanceVeiwer(cordanceSpliter.getWordIndex(),cordanceSpliter.getWordCatalogue(),cordanceSpliter.getPositionName());
  
-    cordanceVeiwer = new CordanceVeiwer(cordanceSpliter.getWordIndex(),cordanceSpliter.getWordCatalogue(),cordanceSpliter.getPositionName());
- 
-    return cordanceVeiwer.getCordance(currentWord, new Integer(currentSize));
- 
+    	value =  cordanceVeiwer.getCordance(currentWord, new Integer(currentSize));
+	}else{
+		value = "file not valid please fix.";
+	}
+	return value;
   }
  
 
@@ -89,13 +101,17 @@ public class Cordance implements Controller{
   * 
   */
   public String getWiderContext(String kwicID) {
- 
+	String value = "";
+	  if(cordanceSpliter != null){
     cordanceVeiwer = new CordanceVeiwer(cordanceSpliter.getWordIndex(),cordanceSpliter.getWordCatalogue(),cordanceSpliter.getPositionName());
  
-    
- 
-    return cordanceVeiwer.getWiderContext(currentWord, currentSize);
- 
+    value =  cordanceVeiwer.getWiderContext(currentWord, currentSize);
+	
+	}else{
+		value = "file not valid please fix.";
+	}
+	  return value;
+	
   }
  
   
