@@ -5,10 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Cordance Spliter
@@ -194,7 +191,30 @@ public class CordanceSpliter {
         HashMap testCat = cs.getWordCatalogue();
         ArrayList testlist = cs.getWordIndex();
 
-        ArrayList testarray = (ArrayList) testCat.get("flatter");
+        ArrayList<Integer> testarray = (ArrayList) testCat.get("flatter");
+
+        Iterator iter = testarray.iterator();
+
+        //Get rid off first, will be used for position description later
+        iter.next();
+
+
+        while(iter.hasNext()){
+
+            int start = (Integer) iter.next();
+
+            start = start - 6;
+
+            if(start < 1){
+               start = 0;
+            }
+
+            for (int x = start; x < start + 12; x++){
+                System.out.print( testlist.get(x) + " " );
+            }
+            System.out.println("");
+        }
+
 
         System.out.println( testlist.get( (Integer) testarray.get(1) ));
 
