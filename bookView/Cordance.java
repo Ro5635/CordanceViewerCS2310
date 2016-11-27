@@ -121,6 +121,7 @@ public class Cordance implements Controller{
  */
  public static void main(String[] args) {
 	cordance = new Cordance();
+	cordance.SetFileLocation("C:/Users/ryan/Documents/university/year 2/cordance veiwer/CordanceViewerCS2310/data/pandpEd12.txt");
 	tui = new TUI(cordance);
  }
 }
