@@ -1,9 +1,4 @@
 package bookView;
- 
-
- 
-import java.util.Spliterator;
-import java.util.SplittableRandom;
 
 import cordance.CordanceSpliter;
  
@@ -14,6 +9,12 @@ import cordance.CordanceVeiwer;
 public class Cordance implements Controller{
  
 
+  //the tui object which controlls user input
+  private static TUI tui ;
+  
+  //the cordance object which controlls the carous classes and passes values to tui
+  private static Cordance cordance;
+	
   //the object that models the cordanceveiwer owned by this object
   private CordanceVeiwer cordanceVeiwer;
  
@@ -41,7 +42,6 @@ public class Cordance implements Controller{
     currentSize = 10;
  
     currentWord = "";
- 
  
   }
  
@@ -118,6 +118,12 @@ public class Cordance implements Controller{
  
   
  
-
- 
+/**
+ * sets up the program by instanciating the 2 objects tui and cordance 
+ * @param args
+ */
+ public static void main(String[] args) {
+	cordance = new Cordance();
+	tui = new TUI(cordance);
+ }
 }
