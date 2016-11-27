@@ -113,10 +113,7 @@ public class Cordance implements Controller{
 	  return value;
 	
   }
- 
-  
- 
-  
+   
  
 /**
  * sets up the program by instanciating the 2 objects tui and cordance 
