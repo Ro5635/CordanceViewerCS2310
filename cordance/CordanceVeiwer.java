@@ -42,12 +42,12 @@ public class CordanceVeiwer {
 			cordance += "\r";
 			//writes the cordance for the num of words left and right
 			
-			for (int i = currentPos.intValue() - num ;i<currentPos.intValue() + num;i++){
+			for (int i = currentPos.intValue() - num - 1 ;i<currentPos.intValue() + num;i++){
 				if(0 < i && i < size){// if i is in the bounds of the whole array 
 					if(wordIndex.get(i) != null){//if the book dosent shows a line brake
 						cordanceSet.add(wordIndex.get(i) + " ");//put word in an array
 					}else{
-						cordanceSet.add(null);//delete all words up to the middle if they have a line brake
+						//delete all words up to the middle if they have a line brake
 						if(i < currentPos.intValue()){
 							for(int a = 0;a<cordanceSet.size();a++){
 								cordanceSet.set(a, " _X_ ");
