@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @author Robert Curran
  * @Date 30/11/16
  */
-public class WordList {
+    class WordList {
 
     /**
      * Array list of all words in the word index, new lines and paragraph breaks are denoted by null values.
@@ -19,7 +19,7 @@ public class WordList {
 
 
     /**
-     *
+     * Constructor for the wordlist, creates a new empty wordlist.
      *
      */
     public WordList(){
@@ -32,6 +32,7 @@ public class WordList {
     }
 
     /**
+     * Constructor for the wordlist, creates a new empty wordlist.
      *
      * @param InitialSize int Initial size for the underlying data structure, set this to 10% larger than the expected
      *                    size of the word list for the most efficient 'addWord' operation.

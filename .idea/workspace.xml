@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2405c33c-e011-497c-b046-3a472247dcc1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CordanceParser/WordList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CordanceParser/WordListTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/bookView/Cordance.class" afterPath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/bookView/Cordance.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/cordance/CordanceVeiwer.class" afterPath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/cordance/CordanceVeiwer.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CordanceParser/WordTable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/CordanceParser/WordList.class" afterPath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/CordanceParser/WordList.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordanceViewerCS2310.iml" afterPath="$PROJECT_DIR$/CordanceViewerCS2310.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/.idea/misc.xml" afterPath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/CordanceViewerCS2310.iml" afterPath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/CordanceViewerCS2310.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordanceParser/WordList.java" afterPath="$PROJECT_DIR$/CordanceParser/WordList.java" />
     </list>
     <ignored path="CordanceViewerCS2310.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,8 +56,8 @@
           <file leaf-file-name="CordanceSpliter.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/cordance/CordanceSpliter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="795">
-                  <caret line="94" column="33" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="33" />
+                <state relative-caret-position="315">
+                  <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#3324#3333#0" expanded="true" />
@@ -72,11 +67,23 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="WordTable.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/CordanceParser/WordTable.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                  <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="WordList.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/CordanceParser/WordList.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="900">
-                  <caret line="60" column="7" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
+                <state relative-caret-position="-15">
+                  <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -87,8 +94,8 @@
           <file leaf-file-name="WordListTest.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/CordanceParser/WordListTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="675">
-                  <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+                <state relative-caret-position="210">
+                  <caret line="14" column="6" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="6" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -152,16 +159,16 @@
         <option value="$PROJECT_DIR$/cordance/CordanceViewer.java" />
         <option value="$PROJECT_DIR$/cordance/CordanceVeiwer.java" />
         <option value="$PROJECT_DIR$/cordance/CordanceSpliter.java" />
+        <option value="$PROJECT_DIR$/CordanceParser/WordTable.java" />
         <option value="$PROJECT_DIR$/CordanceParser/WordList.java" />
         <option value="$PROJECT_DIR$/CordanceParser/WordListTest.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-553" />
-    <option name="y" value="-1417" />
-    <option name="width" value="2560" />
-    <option name="height" value="1417" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="833" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -621,12 +628,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WordListTest - 2016.11.30 at 16h 39m 59s.xml">
-      <configuration name="WordListTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WordListTest - 2016.11.30 at 16h 40m 20s.xml">
-      <configuration name="WordListTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="WordListTest - 2016.11.30 at 16h 47m 46s.xml">
       <configuration name="WordListTest" configurationId="JUnit" />
     </history-entry>
@@ -651,9 +652,15 @@
     <history-entry file="WordListTest - 2016.11.30 at 16h 58m 36s.xml">
       <configuration name="WordListTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="WordListTest - 2016.11.30 at 17h 06m 31s.xml">
+      <configuration name="WordListTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WordListTest - 2016.11.30 at 17h 06m 46s.xml">
+      <configuration name="WordListTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-553" y="-1417" width="2560" height="1417" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="833" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -663,12 +670,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32830188" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28609985" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12748213" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22961374" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -860,8 +867,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cordance/CordanceSpliter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="94" column="33" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="33" />
+        <state relative-caret-position="315">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3324#3333#0" expanded="true" />
@@ -870,10 +877,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CordanceParser/WordTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CordanceParser/WordList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="7" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
+        <state relative-caret-position="-15">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -882,8 +899,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CordanceParser/WordListTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+        <state relative-caret-position="210">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
