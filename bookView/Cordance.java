@@ -1,5 +1,6 @@
 package bookView;
 
+import CordanceParser.ParsedCordance;
 import cordance.CordanceSpliter;
  
 import cordance.CordanceVeiwer;
@@ -8,6 +9,9 @@ import cordance.CordanceVeiwer;
  
 public class Cordance implements Controller{
  
+	
+	//constant size
+	private static final int defaultsize  = 10;
 
   //the tui object which controlls user input
   private static TUI tui ;
@@ -19,8 +23,8 @@ public class Cordance implements Controller{
   private CordanceVeiwer cordanceVeiwer;
  
 
-  //the object that models the cordancesplitter owned by this object
-  private CordanceSpliter cordanceSpliter;
+  //the object that models the parsedCordance owned by this object
+  private ParsedCordance parsedCordance;
  
 
   //the temporary word the user wishes to search is held in this
@@ -39,14 +43,14 @@ public class Cordance implements Controller{
    */
   Cordance(){
  
-    currentSize = 10;
+    currentSize = defaultsize;
  
     currentWord = "";
  
   }
  
   void SetFileLocation( String fileLocation){
-	  cordanceSpliter = new CordanceSpliter(fileLocation);
+	  parsedCordance = new ParsedCordance(fileLocation);
   }
  
   @Override
@@ -57,13 +61,13 @@ public class Cordance implements Controller{
    */
   public String getKWIC(String word) {
 	String value = "";
-    if(cordanceSpliter != null){
+    if(parsedCordance != null){
 
         currentWord = word;
      
-        currentSize = 10;
+        currentSize = defaultsize;
      
-        cordanceVeiwer = new CordanceVeiwer(cordanceSpliter.getWordIndex(),cordanceSpliter.getWordCatalogue(),cordanceSpliter.getPositionName());
+        cordanceVeiwer = new CordanceVeiwer(parsedCordance);
         value =cordanceVeiwer.getCordance(currentWord, new Integer(10));      
     }else{
     	value = "file not valid please fix.";
@@ -79,12 +83,12 @@ public class Cordance implements Controller{
   */
   public String getKWIC(String word, int contextSize) {
 	  String value = "";
-	  if(cordanceSpliter != null){
+	  if(parsedCordance != null){
 		currentSize = contextSize;
  
     	currentWord = word;
  
-    	cordanceVeiwer = new CordanceVeiwer(cordanceSpliter.getWordIndex(),cordanceSpliter.getWordCatalogue(),cordanceSpliter.getPositionName());
+    	cordanceVeiwer = new CordanceVeiwer(parsedCordance);
  
     	value =  cordanceVeiwer.getCordance(currentWord, new Integer(currentSize));
 	}else{
@@ -102,8 +106,8 @@ public class Cordance implements Controller{
   */
   public String getWiderContext(String kwicID) {
 	String value = "";
-	  if(cordanceSpliter != null){
-    cordanceVeiwer = new CordanceVeiwer(cordanceSpliter.getWordIndex(),cordanceSpliter.getWordCatalogue(),cordanceSpliter.getPositionName());
+	  if(parsedCordance != null){
+    cordanceVeiwer = new CordanceVeiwer(parsedCordance);
  
     value =  cordanceVeiwer.getWiderContext(currentWord, currentSize);
 	
@@ -140,8 +144,8 @@ public CordanceVeiwer getCordanceVeiwer() {
 
 
 
-public CordanceSpliter getCordanceSpliter() {
-	return cordanceSpliter;
+public ParsedCordance getCordanceSpliter() {
+	return parsedCordance;
 }
 
 

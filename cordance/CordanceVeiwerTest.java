@@ -160,7 +160,7 @@ public class CordanceVeiwerTest {
 		
 		
 		
-		tester = new CordanceVeiwer(wordIndex, wordCataloge, positionName);
+		tester = new CordanceVeiwer();
 		searchWord = "can";
 		
 		
