@@ -124,4 +124,40 @@ public class Cordance implements Controller{
 	cordance.SetFileLocation("C:/Users/ryan/Documents/university/year 2/cordance veiwer/CordanceViewerCS2310/data/pandpEd12.txt");
 	tui = new TUI(cordance);
  }
+
+public static TUI getTui() {
+	return tui;
+}
+
+public static Cordance getCordance() {
+	return cordance;
+}
+
+
+public CordanceVeiwer getCordanceVeiwer() {
+	return cordanceVeiwer;
+}
+
+
+
+public CordanceSpliter getCordanceSpliter() {
+	return cordanceSpliter;
+}
+
+
+public String getCurrentWord() {
+	return currentWord;
+}
+
+
+public int getCurrentSize() {
+	return currentSize;
+}
+
+
+ 
+ 
+ 
+ 
+ 
 }
