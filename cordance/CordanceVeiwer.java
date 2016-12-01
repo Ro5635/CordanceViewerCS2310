@@ -1,9 +1,6 @@
 package cordance;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-
-import javax.swing.text.Position;
 
 import CordanceParser.ParsedCordance;
 
@@ -34,6 +31,7 @@ public class CordanceVeiwer {
 		output.clear();
 		ArrayList<Integer> temp = parsedcordance.getIDsForWord(word);
 		System.out.println(temp);
+		int ID = 0;
 		
 		String cordance = "";
 		ArrayList<String> cordanceSet = new ArrayList<String>();
@@ -44,7 +42,8 @@ public class CordanceVeiwer {
 		
 		//loop through the hashmaps arraylist of indexes of word positions
 		for(Integer currentPos:temp ){
-			cordance += "\r";
+			cordance += "\r" + ID + ": ";
+			ID++;
 			//writes the cordance for the num of words left and right
 			
 			for (int i = currentPos.intValue() - num ;i<currentPos.intValue() + num;i++){
@@ -63,6 +62,7 @@ public class CordanceVeiwer {
 					}
 					output.add(cordanceSet);
 					cordance += getStringOfCordance(cordanceSet);
+					
 				}
 				cordanceSet = new ArrayList<String>();
 			}
@@ -77,10 +77,14 @@ public class CordanceVeiwer {
 	 * @return
 	 */
 	public String getWiderContext(String word,int num){
+		String a = "";
 		if(output.isEmpty() == true){
+			a = "please enter an actual cordance to veiw first";
+		}else{
 			
 		}
-		return "aaa";
+		
+		return a;
 	}
 	
 	
