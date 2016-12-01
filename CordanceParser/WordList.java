@@ -4,7 +4,7 @@ import java.security.InvalidParameterException;
 import java.util.ArrayList;
 
 /**
- * Models a list of words accesed by a integer ID.
+ * Models a list of words accessed by a integer ID.
  * @author Robert Curran
  * @Date 30/11/16
  */
@@ -64,7 +64,7 @@ import java.util.ArrayList;
      * @param indexPosition int the position to get the word for
      * @return String word at the given position
      */
-    public String getWord(int indexPosition){
+    public String getWord(int indexPosition) throws InvalidParameterException{
 
         try{
 
