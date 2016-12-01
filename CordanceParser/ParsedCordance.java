@@ -129,5 +129,14 @@ public class ParsedCordance {
         return "Volume * Chapter *";
     }
 
+    /**
+     * Gets the current word list size
+     *
+     * @return int current word list size
+     */
+    public int getWordListSize(){
+        return wordList.getListSize();
+    }
+
 
 }

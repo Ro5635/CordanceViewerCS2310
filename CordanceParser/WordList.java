@@ -77,4 +77,14 @@ import java.util.ArrayList;
     }
 
 
+    /**
+     * Gets the current size of the word list
+     *
+     * @return int size of the current word list
+     */
+    public int getListSize(){
+        return wordIndex.size();
+    }
+
+
 }
