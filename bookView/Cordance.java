@@ -35,20 +35,29 @@ public class Cordance implements Controller{
  
   
   /**
-   * constructor that initialises variables and makes a new cordancesplitter
+   * constructor that initialises variables and makes a new cordanceveiwer
    * with the file location supplied
    * the default cordance size is 10 so its default is 10
    * @param filelocation
    */
-  Cordance(){
+  Cordance( String fileLocation){
  
     currentSize = defaultsize;
  
     currentWord = "";
- 
+    
+    SetFileLocation(fileLocation);
+    
+    cordanceVeiwer = new CordanceVeiwer(parsedCordance);
+    
   }
- 
-  void SetFileLocation( String fileLocation){
+  
+  /**
+   * reset file location if needed
+   * 
+   * @param fileLocation
+   */
+  public void SetFileLocation( String fileLocation){
 	  parsedCordance = new ParsedCordance(fileLocation);
   }
  
@@ -66,7 +75,6 @@ public class Cordance implements Controller{
      
         currentSize = defaultsize;
      
-        cordanceVeiwer = new CordanceVeiwer(parsedCordance);
         value =cordanceVeiwer.getCordance(currentWord, new Integer(10));      
     }else{
     	value = "file not valid please fix.";
@@ -87,8 +95,7 @@ public class Cordance implements Controller{
  
     	currentWord = word;
  
-    	cordanceVeiwer = new CordanceVeiwer(parsedCordance);
- 
+    	
     	value =  cordanceVeiwer.getCordance(currentWord, new Integer(currentSize));
 	}else{
 		value = "file not valid please fix.";
@@ -101,14 +108,13 @@ public class Cordance implements Controller{
   @Override
  /**
   * returns the cordance with the supplied word and then uses the current size and word to make a new one
-  * 
+  * @param kwicID
   */
   public String getWiderContext(String kwicID) {
 	String value = "";
 	  if(parsedCordance != null){
-    cordanceVeiwer = new CordanceVeiwer(parsedCordance);
- 
-    value =  cordanceVeiwer.getWiderContext(currentWord, currentSize);
+		  System.out.println(kwicID);
+    value =  cordanceVeiwer.getWiderContext( currentSize , kwicID);
 	
 	}else{
 		value = "file not valid please fix.";
@@ -117,16 +123,7 @@ public class Cordance implements Controller{
 	
   }
    
- 
-/**
- * sets up the program by instanciating the 2 objects tui and cordance 
- * @param args
- */
- public static void main(String[] args) {
-	cordance = new Cordance();
-	cordance.SetFileLocation("C:/Users/ryan/Documents/university/year 2/cordance veiwer/CordanceViewerCS2310/data/pandpEd12.txt");
-	tui = new TUI(cordance);
- }
+
 
 public static TUI getTui() {
 	return tui;
