@@ -140,7 +140,7 @@ public CordanceVeiwer getCordanceVeiwer() {
 
 
 
-public ParsedCordance getCordanceSpliter() {
+public ParsedCordance getParsedCordance() {
 	return parsedCordance;
 }
 

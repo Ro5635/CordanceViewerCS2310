@@ -12,11 +12,11 @@ public class CordanceTest {
 	public void test() {
 		
 		
-		tester = new Cordance();
+		tester = new Cordance("C:/Users/ryan/Documents/university/year 2/cordance veiwer/CordanceViewerCS2310/data/pandpEd12.txt");
 		assertEquals(tester.getCurrentSize(), 10);
 		assertEquals(tester.getCurrentWord(), "");
-		assertEquals(tester.getKWIC("he"), "file not valid please fix.");
 		
+		assertEquals(tester.get);
 		
 		
 	}
