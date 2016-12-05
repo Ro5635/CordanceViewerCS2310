@@ -40,15 +40,13 @@ public class Cordance implements Controller{
    * the default cordance size is 10 so its default is 10
    * @param filelocation
    */
-  Cordance( String fileLocation){
+  Cordance( ParsedCordance pc){
  
     currentSize = defaultsize;
  
     currentWord = "";
     
-    SetFileLocation(fileLocation);
-    
-    cordanceVeiwer = new CordanceVeiwer(parsedCordance);
+    cordanceVeiwer = new CordanceVeiwer(pc);
     
   }
   
