@@ -1,5 +1,6 @@
 package cordance;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 
 import CordanceParser.ParsedCordance;
@@ -35,7 +36,14 @@ public class CordanceVeiwer {
 	 */
 	public String getCordance(String word, int num){
 		output.clear();
-		ArrayList<Integer> temp = parsedcordance.getIDsForWord(word);
+		
+		ArrayList<Integer> temp;// = new ArrayList<Integer>(11);
+		try( temp = parsedcordance.getIDsForWord(word)){
+		}catch (InvalidParameterException e){
+			e.toString();
+		}
+		
+		
 		int ID = 0;//id for output to the user which word to look at in the extended view
 		String cordance = "";
 		int size = parsedcordance.getWordListSize();
@@ -89,6 +97,7 @@ public class CordanceVeiwer {
 				if(parsedcordance.getWordByID(i) != null){//if the book dosent shows a line brake
 					cordanceSet.add(parsedcordance.getWordByID(i) + " ");//put word in an array
 				}else{
+					System.out.println("ran");
 					//delete all words up to the middle if they have a line brake
 					if(i < currentPos){
 						for(int a = 0;a<cordanceSet.size();a++){
