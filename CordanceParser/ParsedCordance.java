@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -24,6 +25,7 @@ public class ParsedCordance {
     private WordTable wordTable;
 
 
+    private Position positionInfo;
 
     /**
      * Constructor for ParsedCordance
@@ -31,6 +33,9 @@ public class ParsedCordance {
      * @param fileLocation The file location of the file for which the cordance is to be created
      */
     public ParsedCordance(String fileLocation) {
+
+        //Create a new position to hold position data
+        positionInfo = new Position();
 
         //Create a new buffered reader
         BufferedReader buffRead = null;
@@ -60,6 +65,12 @@ public class ParsedCordance {
 
         try {
 
+            //Create variable to track the line number
+            long lineNo = 0;
+            //Create the variable to track the number of succesive empty lines, 3 blank lines in a row
+            //is a indicator of a block break.
+            int noSuccessiveNewLines = 0;
+
             buffRead = new BufferedReader(new FileReader(fileLocation));
             wordScanner = new Scanner(buffRead);
 
@@ -72,6 +83,8 @@ public class ParsedCordance {
             while (wordScanner.hasNext()) {
 
                 newWord = wordScanner.next();
+
+                lineNo++;
 
                 //If it is an new line place a null.
 
@@ -88,6 +101,9 @@ public class ParsedCordance {
                 } else {
 
                     int newWordID = wordList.addWord(newWord);
+
+                    //Add the word to the positionInfo object
+                    positionInfo.addWordID(newWordID);
 
                     //Add to wordtable
                     wordTable.addWord(newWord, newWordID);
@@ -110,23 +126,43 @@ public class ParsedCordance {
         }
 
 
+
+
+
     }
 
 
-
+    /**
+     *
+     * @param wordID
+     * @return
+     * @throws InvalidParameterException
+     */
     public String getWordByID(int wordID) throws InvalidParameterException {
 
         return wordList.getWord(wordID);
     }
 
+    /**
+     *
+     * @param word
+     * @return
+     * @throws InvalidParameterException
+     */
     public ArrayList<Integer> getIDsForWord(String word) throws InvalidParameterException{
 
         return wordTable.getWordIDs(word);
     }
 
-    public String getPositionInfoByWordID() throws InvalidParameterException{
-        //TO Do
-        return "Volume * Chapter *";
+    /**
+     *
+     * @param wordID
+     * @return
+     * @throws InvalidParameterException
+     */
+    public Map<String, String> getPositionInfoByWordID(Integer wordID) throws InvalidParameterException{
+
+        return positionInfo.getPositionInfoForWordID(wordID);
     }
 
     /**
@@ -135,7 +171,9 @@ public class ParsedCordance {
      * @return int current word list size
      */
     public int getWordListSize(){
+
         return wordList.getListSize();
+
     }
 
 

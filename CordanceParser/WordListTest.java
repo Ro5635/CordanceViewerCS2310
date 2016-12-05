@@ -70,4 +70,17 @@ public class WordListTest {
 
     }
 
+    /**
+     * Test that the methrod to get the size of the index is operating correctly
+     */
+    @Test
+    public void testGetListSize() {
+
+        //Ensure that when the list is empty it returns zero
+        assertEquals("Test 0 returned for list size when empty", 0 , wl.getListSize());
+
+
+    }
+
+
 }
