@@ -160,13 +160,13 @@ public class CordanceVeiwerTest {
 		
 		
 		
-		tester = new CordanceVeiwer();
-		searchWord = "can";
-		
-		
-		System.out.println(tester.getCordance(searchWord, 10));
-		
-		assertEquals("Test for x", tester.getCordance(searchWord, 10), "by maticulously adding words to an arraylist so that i can test a cordance program i'm making. ");
+//		//tester = new CordanceVeiwer();
+//		searchWord = "can";
+//
+//
+//		System.out.println(tester.getCordance(searchWord, 10));
+//
+//		assertEquals("Test for x", tester.getCordance(searchWord, 10), "by maticulously adding words to an arraylist so that i can test a cordance program i'm making. ");
 		
 				
 				
