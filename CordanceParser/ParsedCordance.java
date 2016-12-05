@@ -9,7 +9,12 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- * Created by robert on 30/11/2016.
+ * PasedCordance, parses a cordance for use in a cordance, accepts an array of file locations. Allows for the querying of
+ * line information such as the title and line number. This information is extracted from the text using the standards
+ * defined on: https://IMUSTPUTTHATLINKHERE.com
+ *
+ * @author Robert Curran
+ * @date 5 December 2016
  */
 public class ParsedCordance {
 
@@ -32,7 +37,7 @@ public class ParsedCordance {
      *
      * @param fileLocation The file location of the file for which the cordance is to be created
      */
-    public ParsedCordance(String fileLocation) {
+    public ParsedCordance(String[] fileLocation) {
 
         //Create a new position to hold position data
         positionInfo = new Position();
@@ -57,7 +62,7 @@ public class ParsedCordance {
          * TO DO
 
          Use huristics based on the file size to estimate a suitable initial capacity, for now set
-         a resonable number....
+         a reasonable number....
          */
 
         wordTable = new WordTable();
@@ -67,19 +72,32 @@ public class ParsedCordance {
 
             //Create variable to track the line number
             long lineNo = 0;
+
             //Create the variable to track the number of succesive empty lines, 3 blank lines in a row
             //is a indicator of a block break.
             int noSuccessiveNewLines = 0;
 
-            buffRead = new BufferedReader(new FileReader(fileLocation));
+            buffRead = new BufferedReader(new FileReader(fileLocation[0]));
             wordScanner = new Scanner(buffRead);
 
-
+            //Holds the most recently read word
             String newWord;
-            //Set the deliminator
+
+            //Set the deliminator for tockanisation
             wordScanner.useDelimiter("--|\\n|\\p{javaWhitespace}+");
 
 
+            //Read the first lines of the text which contain the title and the author
+
+
+
+
+            //End title and author special read
+
+
+
+            //Go through the rest of the text, detecting any block sections along the way
+            //by there 3 blank line head and all capital nature.
             while (wordScanner.hasNext()) {
 
                 newWord = wordScanner.next();
@@ -130,6 +148,7 @@ public class ParsedCordance {
 
 
     }
+
 
 
     /**

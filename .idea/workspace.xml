@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2405c33c-e011-497c-b046-3a472247dcc1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/cordance/CordanceVeiwerTest.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CordanceParser/Position.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cordance/CordanceSpliter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/cordance/CordanceSpliter.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/CordanceParser/ParsedCordance.class" afterPath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/CordanceParser/ParsedCordance.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/CordanceParser/WordList.class" afterPath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/CordanceParser/WordList.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/CordanceParser/WordListTest.class" afterPath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/CordanceParser/WordListTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/bookView/Cordance.class" afterPath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/bookView/Cordance.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/cordance/CordanceVeiwer.class" afterPath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/cordance/CordanceVeiwer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordanceParser/ParsedCordance.java" afterPath="$PROJECT_DIR$/CordanceParser/ParsedCordance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordanceParser/WordListTest.java" afterPath="$PROJECT_DIR$/CordanceParser/WordListTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cordance/CordanceVeiwerTest.java" afterPath="$PROJECT_DIR$/cordance/CordanceVeiwerTest.java" />
     </list>
     <ignored path="CordanceViewerCS2310.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,8 +44,8 @@
       <file leaf-file-name="ParsedCordance.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CordanceParser/ParsedCordance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
+            <state relative-caret-position="195">
+              <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,7 +70,7 @@
       <file leaf-file-name="WordTable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CordanceParser/WordTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
+            <state relative-caret-position="1170">
               <caret line="78" column="47" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -871,16 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CordanceParser/WordTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="78" column="47" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CordanceParser/WordList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="975">
@@ -919,6 +898,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CordanceParser/WordTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="78" column="47" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CordanceParser/Position.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -933,8 +922,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CordanceParser/ParsedCordance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
+        <state relative-caret-position="195">
+          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
