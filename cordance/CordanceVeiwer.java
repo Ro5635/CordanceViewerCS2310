@@ -36,7 +36,7 @@ public class CordanceVeiwer {
 	 */
 	public String getCordance(String word, int num){
 		output.clear();
-		String cordance = "";
+		String cordance = "something had a hiccup";
 		
 		ArrayList<Integer> temp;// = new ArrayList<Integer>(11);
 		try{
@@ -72,7 +72,8 @@ public class CordanceVeiwer {
 		if(output.isEmpty() == true){
 			wordCompact = "please enter an actual cordance to veiw first";
 		}else{
-			//a += parsedcordance.getPositionInfoByWordID(output.get(Integer.parseInt(kwicID)).intValue());
+			
+			//wordCompact += parsedcordance.getPositionInfoByWordID(output.get(Integer.parseInt(kwicID)).intValue());
 			
 			//add line to the end
 			wordCompact = "" + getLineOfCordance(output.get(Integer.parseInt(kwicID)), num, parsedcordance.getWordListSize());

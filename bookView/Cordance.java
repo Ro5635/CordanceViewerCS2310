@@ -51,12 +51,12 @@ public class Cordance implements Controller{
   }
   
   /**
-   * reset file location if needed
+   * reset folder location if needed
    * 
    * @param fileLocation
    */
-  public void SetFileLocation( String fileLocation){
-	  parsedCordance = new ParsedCordance(fileLocation);
+  public void SetFileLocation( String[] folderLocation){
+	  parsedCordance = new ParsedCordance(folderLocation);
   }
  
   @Override
