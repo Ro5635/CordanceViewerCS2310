@@ -44,7 +44,7 @@ public class Position {
 
 
 
-    public void addNewBlockBreak(String breakName) throws InvalidParameterException{
+    private void addNewBlockBreak(String breakName) throws InvalidParameterException{
 
         //Ensure the break has not all ready been created.
         if(currentBlockBreaksValue.containsKey(breakName)){
@@ -63,7 +63,12 @@ public class Position {
 
     public void updateBlockBreakValue(String breakName, String value){
 
-        //How to handle a non existing value ????
+        //If the break is not all ready defined in the system define it
+        if(currentBlockBreaksValue.containsKey(breakName)){
+            //Add the new block break
+            addNewBlockBreak(breakName);            //TO DO HANDLE THE EXCEPTION
+
+        }
 
         //Update the data structure
         currentBlockBreaksValue.put(breakName, value);

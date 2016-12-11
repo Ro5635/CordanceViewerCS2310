@@ -34,30 +34,30 @@ public class CordanceVeiwer {
 	 * @param num
 	 * @return
 	 */
-	public String getCordance(String word, int num){
-		output.clear();
-		
-		ArrayList<Integer> temp;// = new ArrayList<Integer>(11);
-		try( temp = parsedcordance.getIDsForWord(word)){
-		}catch (InvalidParameterException e){
-			e.toString();
-		}
-		
-		
-		int ID = 0;//id for output to the user which word to look at in the extended view
-		String cordance = "";
-		int size = parsedcordance.getWordListSize();
-		
-		//loop through the arraylist of indexes of word positions
-		for(Integer currentPos:temp ){
-			cordance += "\r" + ID + ": ";
-			ID++;
-			cordance += getLineOfCordance(currentPos, num, size);
-			output.add(currentPos);
-		}
-		System.out.println(output.get(0));
-		return cordance;
-	}
+//	public String getCordance(String word, int num){
+//		output.clear();
+//
+//		ArrayList<Integer> temp;// = new ArrayList<Integer>(11);
+//		try( temp = parsedcordance.getIDsForWord(word)){
+//		}catch (InvalidParameterException e){
+//			e.toString();
+//		}
+//
+//
+//		int ID = 0;//id for output to the user which word to look at in the extended view
+//		String cordance = "";
+//		int size = parsedcordance.getWordListSize();
+//
+//		//loop through the arraylist of indexes of word positions
+//		for(Integer currentPos:temp ){
+//			cordance += "\r" + ID + ": ";
+//			ID++;
+//			cordance += getLineOfCordance(currentPos, num, size);
+//			output.add(currentPos);
+//		}
+//		System.out.println(output.get(0));
+//		return cordance;
+//	}
 	/**
 	 * will return a cordance with wider context and more details using the last output used with num being the
 	 * number of words left and right and kwickid being the requested id

@@ -55,7 +55,7 @@ public class Cordance implements Controller{
    * 
    * @param fileLocation
    */
-  public void SetFileLocation( String fileLocation){
+  public void SetFileLocation( String[] fileLocation){
 	  parsedCordance = new ParsedCordance(fileLocation);
   }
  
@@ -73,7 +73,7 @@ public class Cordance implements Controller{
      
         currentSize = defaultsize;
      
-        value =cordanceVeiwer.getCordance(currentWord, new Integer(10));      
+       // value =cordanceVeiwer.getCordance(currentWord, new Integer(10));
     }else{
     	value = "file not valid please fix.";
     }
@@ -94,7 +94,7 @@ public class Cordance implements Controller{
     	currentWord = word;
  
     	
-    	value =  cordanceVeiwer.getCordance(currentWord, new Integer(currentSize));
+    	//value =  cordanceVeiwer.getCordance(currentWord, new Integer(currentSize));
 	}else{
 		value = "file not valid please fix.";
 	}
