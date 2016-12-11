@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.function.IntBinaryOperator;
 
 
 /**
@@ -26,12 +27,12 @@ public class Position {
     /**
      *
      */
-    private ArrayList< ArrayList<String> > wordBlockInformation;
+    private Map< Integer , ArrayList<String> > wordBlockInformation;
 
     public Position() {
 
         //Initialise a new empty word block
-        wordBlockInformation = new ArrayList<ArrayList<String>>();
+        wordBlockInformation = new HashMap<Integer , ArrayList<String> >();
 
         //Initialise a new list of block breaks
         listedBlockBreakes = new ArrayList<String>();
@@ -64,7 +65,7 @@ public class Position {
     public void updateBlockBreakValue(String breakName, String value){
 
         //If the break is not all ready defined in the system define it
-        if(currentBlockBreaksValue.containsKey(breakName)){
+        if(!currentBlockBreaksValue.containsKey(breakName)){
             //Add the new block break
             addNewBlockBreak(breakName);            //TO DO HANDLE THE EXCEPTION
 
@@ -87,14 +88,14 @@ public class Position {
 
         }
 
-        //Add teh wordID to the word information data strucutre along with the values
+        //Add the wordID to the word information data structure along with the values
         //of each of the current break points in the book.
-        wordBlockInformation.add(wordID, positionData);
+        wordBlockInformation.put(wordID, positionData);
 
     }
 
 
-    public Map<String, String> getPositionInfoForWordID(Integer wordID){//THERE ARE A LOT OF POTENTIAL ERRORS THAT NEED CATCHING HERE
+    public Map<String, String> getPositionInfoForWordID(Integer wordID) throws InvalidParameterException {//THERE ARE A LOT OF POTENTIAL ERRORS THAT NEED CATCHING HERE
 
         //Get the position values for the wordID
         ArrayList<String> positionValues = wordBlockInformation.get(wordID);
@@ -105,15 +106,50 @@ public class Position {
         //index used to track position in the block breaks name list
         int indexCurrentBreakName = 0;
 
-        for (String positionValue: positionValues ) {
+        try {
 
-            //Add the position name and its value to the map
-            positionInfo.put(listedBlockBreakes.get(indexCurrentBreakName++) , positionValue);
+            for (String positionValue : positionValues) {
+
+                //If the position value is not null add the position name and its value to the map, null values are in feilds
+                //used in other texts but not this current text.
+                if (positionValue != null) {
+                    positionInfo.put(listedBlockBreakes.get(indexCurrentBreakName), positionValue);
+                }
+
+                indexCurrentBreakName++;
+
+            }
+
+        }catch( NullPointerException e){
+            throw new InvalidParameterException("The passed wordID does not exist in the position tracker, the passed wordID was: " + wordID);
+
+        }
+
+        return positionInfo;
+    }
+
+    /**
+     * This method should be called when the text that is being used is changed. This is so that tracking of the block breaks
+     * continues correctly for the new source with different breakpoints
+     *
+     * This guards against the situation where the first text added has a break section (such as edition) that the second
+     * book does not contain, calls to the position information without this method would list the edition for text two also.
+     */
+    public void registerSourceTextChange(){
+
+        //Reset all of the beaks that are currently listed to null, therefore unless they are addressed in teh new source they will
+        //not be given in the output.
+
+        currentBlockBreaksValue.keySet();
+
+        for( Map.Entry<String, String> key : currentBlockBreaksValue.entrySet() ){
+            //Set the value of the entry to null
+            key.setValue(null);
 
         }
 
 
-        return positionInfo;
+
     }
 
 
