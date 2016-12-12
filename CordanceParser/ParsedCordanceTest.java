@@ -2,6 +2,9 @@ package CordanceParser;
 
 import org.junit.Test;
 
+import java.io.File;
+import java.net.URISyntaxException;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -13,9 +16,10 @@ public class ParsedCordanceTest {
      * Test that the indexing and creation of the words is working correctly
      */
     @Test
-    public void testWordCreation() {
+    public void testWordCreation() throws URISyntaxException {
 
-        String[] fileLocations = {"/Users/robert/Desktop/desktop/abook.txt",""};
+        //Include the test data file, it is included in the source
+        String[] fileLocations = {"out/production/CordanceViewerCS2310/CordanceParser/testBookSorce.txt", ""};
 
         ParsedCordance pc = new ParsedCordance(fileLocations);
 
@@ -24,6 +28,7 @@ public class ParsedCordanceTest {
 
     }
 
-
-
 }
+
+
+
