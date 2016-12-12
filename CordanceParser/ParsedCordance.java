@@ -194,7 +194,7 @@ public class ParsedCordance {
                                 successiveEmptyLines = 0;
                             }
 
-                        } else {
+                        } else if(++successiveEmptyLines == 2) {
 
                         /*
                         * This is an new line (black line)
