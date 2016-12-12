@@ -11,12 +11,6 @@ public class Cordance implements Controller{
 	
 	//constant size
 	private static final int defaultsize  = 10;
-
-  //the tui object which controlls user input
-  private static TUI tui ;
-  
-  //the cordance object which controlls the carous classes and passes values to tui
-  private static Cordance cordance;
 	
   //the object that models the cordanceveiwer owned by this object
   private CordanceVeiwer cordanceVeiwer;
@@ -50,15 +44,6 @@ public class Cordance implements Controller{
     
     parsedCordance = pc;
     
-  }
-  
-  /**
-   * reset folder location if needed
-   * 
-   * @param fileLocation
-   */
-  public void SetFileLocation( String[] folderLocation){
-	  parsedCordance = new ParsedCordance(folderLocation);
   }
  
   @Override
