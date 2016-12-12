@@ -19,6 +19,7 @@ public class DirectoryPusher {
 		int i = 0;
 		for (File f : files){
 		    books[i] = f.getAbsolutePath();
+		    i++;
 		}
     	parsedCordance = new ParsedCordance(books);	    
 	}

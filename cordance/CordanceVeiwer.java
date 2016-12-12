@@ -34,30 +34,30 @@ public class CordanceVeiwer {
 	 * @param num
 	 * @return
 	 */
-//	public String getCordance(String word, int num){
-//		output.clear();
-//
-//		ArrayList<Integer> temp;// = new ArrayList<Integer>(11);
-//		try( temp = parsedcordance.getIDsForWord(word)){
-//		}catch (InvalidParameterException e){
-//			e.toString();
-//		}
-//
-//
-//		int ID = 0;//id for output to the user which word to look at in the extended view
-//		String cordance = "";
-//		int size = parsedcordance.getWordListSize();
-//
-//		//loop through the arraylist of indexes of word positions
-//		for(Integer currentPos:temp ){
-//			cordance += "\r" + ID + ": ";
-//			ID++;
-//			cordance += getLineOfCordance(currentPos, num, size);
-//			output.add(currentPos);
-//		}
-//		System.out.println(output.get(0));
-//		return cordance;
-//	}
+	public String getCordance(String word, int num){
+		output.clear();
+		String cordance = "";
+		
+		ArrayList<Integer> temp;// = new ArrayList<Integer>(11);
+		try{
+			temp = parsedcordance.getIDsForWord(word);
+			int ID = 0;//id for output to the user which word to look at in the extended view
+			int size = parsedcordance.getWordListSize();
+			
+			//loop through the arraylist of indexes of word positions
+			for(Integer currentPos:temp ){
+				cordance += "\r" + ID + ": ";
+				ID++;
+				cordance += getLineOfCordance(currentPos, num, size);
+				output.add(currentPos);
+			}
+			System.out.println(output.get(0));
+		}catch (InvalidParameterException e){
+			e.toString();
+		}
+		
+		return cordance;
+	}
 	/**
 	 * will return a cordance with wider context and more details using the last output used with num being the
 	 * number of words left and right and kwickid being the requested id
@@ -70,20 +70,12 @@ public class CordanceVeiwer {
 		if(output.isEmpty() == true){
 			wordCompact = "please enter an actual cordance to veiw first";
 		}else{
-			//a += parsedcordance.getPositionInfoByWordID(output.get(Integer.parseInt(kwicID)).intValue());
+			
+			//wordCompact += parsedcordance.getPositionInfoByWordID(output.get(Integer.parseInt(kwicID)).intValue());
 			
 			//add line to the end
 			wordCompact = "" + getLineOfCordance(output.get(Integer.parseInt(kwicID)), num, parsedcordance.getWordListSize());
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		return wordCompact;
 	}
 	
@@ -105,7 +97,6 @@ public class CordanceVeiwer {
 				if(parsedcordance.getWordByID(i) != null){//if the book dosent shows a line brake
 					cordanceSet.add(parsedcordance.getWordByID(i) + " ");//put word in an array
 				}else{
-					System.out.println("ran");
 					//delete all words up to the middle if they have a line brake
 					if(i < currentPos){
 						for(int a = 0;a<cordanceSet.size();a++){
