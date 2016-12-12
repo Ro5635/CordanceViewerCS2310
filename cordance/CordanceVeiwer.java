@@ -51,7 +51,6 @@ public class CordanceVeiwer {
 				cordance += getLineOfCordance(currentPos, num, size);
 				output.add(currentPos);
 			}
-			System.out.println(output.get(0));
 		}catch (InvalidParameterException e){
 			e.toString();
 		}
@@ -92,8 +91,9 @@ public class CordanceVeiwer {
 		String cordanceline = "";
 		ArrayList<String> cordanceSet = new ArrayList<>();
 		//writes the cordance for the num of words left and right
-		for (int i = currentPos - num ;i<currentPos + num;i++){
+		for (int i = currentPos - num ;i<currentPos + num +1;i++){
 			if(0 < i && i < size){// if i is in the bounds of the whole array 
+				//System.out.println(parsedcordance.getWordByID(i));
 				if(parsedcordance.getWordByID(i) != null){//if the book dosent shows a line brake
 					cordanceSet.add(parsedcordance.getWordByID(i) + " ");//put word in an array
 				}else{
