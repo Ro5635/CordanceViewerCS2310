@@ -85,17 +85,18 @@ public class Cordance implements Controller{
 
  
   @Override
- /**
-  * returns the cordance with the supplied word and size
-  */
+  /**
+   * returns the cordance with the supplied word and size
+   * @param word
+   * @param contextSize
+   */
   public String getKWIC(String word, int contextSize) {
 	  String value = "";
-	  if(parsedCordance != null){
+	  if(parsedCordance != null){//while this has a parsed cordance it will ask it for a cordance then return it
 		currentSize = contextSize;
  
     	currentWord = word;
  
-    	
     	value =  cordanceVeiwer.getCordance(currentWord, new Integer(currentSize));
 	}else{
 		value = "file not valid please fix.";
@@ -115,49 +116,10 @@ public class Cordance implements Controller{
 	  if(parsedCordance != null){
 		  System.out.println(kwicID);
     value =  cordanceVeiwer.getWiderContext( currentSize , kwicID);
-	
 	}else{
 		value = "file not valid please fix.";
 	}
 	  return value;
 	
   }
-   
-
-
-public static TUI getTui() {
-	return tui;
-}
-
-public static Cordance getCordance() {
-	return cordance;
-}
-
-
-public CordanceVeiwer getCordanceVeiwer() {
-	return cordanceVeiwer;
-}
-
-
-
-public ParsedCordance getParsedCordance() {
-	return parsedCordance;
-}
-
-
-public String getCurrentWord() {
-	return currentWord;
-}
-
-
-public int getCurrentSize() {
-	return currentSize;
-}
-
-
- 
- 
- 
- 
- 
 }
