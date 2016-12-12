@@ -89,43 +89,24 @@ public class CordanceVeiwer {
 	 */
 	private String getLineOfCordance (int currentPos , int num, int size){
 		String cordanceline = "";
-		ArrayList<String> cordanceSet = new ArrayList<>();
 		//writes the cordance for the num of words left and right
 		for (int i = currentPos - num ;i<currentPos + num +1;i++){
 			if(0 < i && i < size){// if i is in the bounds of the whole array 
-				//System.out.println(parsedcordance.getWordByID(i));
+				System.out.println(i);
+				System.out.println(parsedcordance.getWordByID(i));
 				if(parsedcordance.getWordByID(i) != null){//if the book dosent shows a line brake
-					cordanceSet.add(parsedcordance.getWordByID(i) + " ");//put word in an array
+					cordanceline += (parsedcordance.getWordByID(i) + " ");//put word in an array
 				}else{
 					//delete all words up to the middle if they have a line brake
 					if(i < currentPos){
-						for(int a = 0;a<cordanceSet.size();a++){
-							cordanceSet.set(a, " _X_ ");
-						}
+						cordanceline = "";
 					}else if(i > currentPos){// stop the loop if the linebrake is after middle
 						i = currentPos+num+1;
 					}
-				}
-				cordanceline += getStringOfCordance(cordanceSet);
-				
+				}				
 			}
-
-			cordanceSet = new ArrayList<String>();
 		}
 		return cordanceline;
-	}
-	
-	/**
-	 * will return a single string from an arraylist of words
-	 * @param input
-	 * @return
-	 */
-	private String getStringOfCordance( ArrayList<String> input){
-		String wordCompact = "";
-		for(String word:input){
-			wordCompact += word;
-		}
-		return wordCompact;
 	}
 	
 	

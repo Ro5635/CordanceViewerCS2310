@@ -28,9 +28,18 @@ public class CordanceVeiwerTest {
 		searchWord = "vex";
 
 		
-		System.out.println(tester.getCordance(searchWord, 10));
+		System.out.println(tester.getCordance(searchWord, 2));
 
-		//assertEquals("Test for x", tester.getCordance(searchWord, 10), "by maticulously adding words to an arraylist so that i can test a cordance program i'm making. ");				
+		//check it returns the correct word
+		assertEquals(tester.getCordance(searchWord, 0), "0: vex");	
+
+		//check it returns the words before and after the chosen word, in this case its just 1 word
+		assertEquals(tester.getCordance(searchWord, 1), "0: or vex her.");	
+		
+		//check that the spaces at the end are removed
+		assertEquals(tester.getCordance(searchWord, 2), "0: distress or vex her.");
+		
+		
 	}
 
 }
