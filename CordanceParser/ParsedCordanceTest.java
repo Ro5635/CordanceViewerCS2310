@@ -23,6 +23,17 @@ public class ParsedCordanceTest {
 
         System.out.println(pc.getIDsForWord("a"));
 
+        for(int i =7; i <= 15; i++){
+
+            System.out.println( pc.getWordByID(i)  );
+
+        }
+
+        System.out.println(pc.getIDsForWord(null));
+
+        System.out.println("THIS: " +  pc.getWordByID(3) );
+
+
 
 
 

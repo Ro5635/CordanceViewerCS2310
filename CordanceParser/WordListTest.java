@@ -46,6 +46,22 @@ public class WordListTest {
     }
 
     /**
+     * Test that the indexing and creation of the words is working correctly
+     */
+    @Test
+    public void testNullLineCreationAndRecall() {
+
+        wl.addWord("Chocolate!");
+        //Ensure that null can be added to the list
+        wl.addWord(null);
+
+        //Test acquisition of the null listed words
+        assertEquals("Tests acquisition of the created null listing form the list", null, wl.getWord(1));
+
+    }
+
+
+    /**
      *  Ensure that the correct exception is thrown when a invalid parameter is passed
      */
     @Test(expected=InvalidParameterException.class)

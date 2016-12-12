@@ -10,7 +10,11 @@ import java.util.Map;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by robert on 11/12/2016.
+ *  Unit tests for the Position Class, sequentialy tests aspects of the Position class to ensure that it is functioning
+ *  as expected
+ *  @author Robert Curran
+ *  @See Position
+ *  @Date 11/12/16
  */
 public class PositionTest {
 
@@ -94,7 +98,8 @@ public class PositionTest {
     }
 
     /**
-     * Test that the updating of single breakpoints within the text works correctly
+     * Test that the updating of single breakpoints within the text works correctly, this is where a single feild in a
+     * existing set of feilds is changed. Only the given field should have changed.
      *
      */
     @Test
@@ -139,6 +144,20 @@ public class PositionTest {
         assertEquals("Test that retrieval of a updated value returns as set"
                 , "Potatoes and ketchup" , wordPosInfo.get("Chapter") );
 
+
+        //Ensure that values that have not been updated are still as initially set, the breakpoint that we have changed
+        //is the chapter, this is the last position in the array. Clearly this will have changed so it will not be tested.
+        for (int index = 0; index < (testDataText1[0].length - 1); index++) {
+
+            //Ensure the breakpoint name is retrieved successfully
+            assertEquals("Check that breakpoint '" + testDataText1[0][index] + "' is retrieved correctly, Update single breakpoint test"
+                    , true, wordPosInfo.containsKey( testDataText1[0][index] ));
+
+            //Ensure that the value is correct
+            assertEquals("Check that breakpoint '" + testDataText1[0][index] + "'s value is retrieved correctly, Update single breakpoint test"
+                    , testDataText1[1][index] , wordPosInfo.get( testDataText1[0][index] ));
+
+        }
 
 
     }

@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2405c33c-e011-497c-b046-3a472247dcc1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/CordanceParser/ParsedCordance.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/CordanceParser/ParsedCordanceTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/CordanceParser/Position.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/CordanceParser/PositionTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/CordanceParser/WordList.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/CordanceParser/WordListTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/CordanceParser/WordTable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/CordanceParser/WordTableTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/bookView/Controller.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/bookView/Cordance.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/bookView/CordanceTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/bookView/DirectoryPusher.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/bookView/TUI.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/bookView/startclass.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/cordance/CordanceVeiwer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/cordance/CordanceVeiwerTest.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordanceParser/ParsedCordance.java" afterPath="$PROJECT_DIR$/CordanceParser/ParsedCordance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/CordanceViewerCS2310/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bookView/StartClass.java" afterPath="$PROJECT_DIR$/bookView/StartClass.java" />
     </list>
     <ignored path="CordanceViewerCS2310.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -91,14 +73,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="startclass.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bookView/startclass.java">
+      <file leaf-file-name="StartClass.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bookView/StartClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+            <state relative-caret-position="135">
+              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DirectoryPusher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bookView/DirectoryPusher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CordanceTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bookView/CordanceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -170,10 +172,11 @@
         <option value="$PROJECT_DIR$/CordanceParser/ParsedCordanceTest.java" />
         <option value="$PROJECT_DIR$/cordance/CordanceVeiwer.java" />
         <option value="$PROJECT_DIR$/bookView/CordanceTest.java" />
-        <option value="$PROJECT_DIR$/cordance/CordanceVeiwerTest.java" />
         <option value="$PROJECT_DIR$/CordanceParser/WordList.java" />
         <option value="$PROJECT_DIR$/bookView/startclass.java" />
         <option value="$PROJECT_DIR$/CordanceParser/ParsedCordance.java" />
+        <option value="$PROJECT_DIR$/bookView/StartClass.java" />
+        <option value="$PROJECT_DIR$/cordance/CordanceVeiwerTest.java" />
       </list>
     </option>
   </component>
@@ -286,24 +289,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="bookView" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CordanceViewerCS2310" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CordanceViewerCS2310" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bookView" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="startclass.java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -791,17 +776,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Amazon EC2" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5108434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23253012" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23253012" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19854015" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19759037" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28915662" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32846716" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -910,14 +895,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CordanceParser/WordTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="78" column="47" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CordanceParser/WordList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="975">
@@ -1110,7 +1087,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/out/production/CordanceViewerCS2310/bookView/Cordance.class" />
     <entry file="file://$PROJECT_DIR$/out/production/CordanceViewerCS2310/bookView/CordanceTest.class" />
-    <entry file="file://$PROJECT_DIR$/out/production/CordanceViewerCS2310/bookView/startclass.class" />
+    <entry file="file://$PROJECT_DIR$/out/production/CordanceViewerCS2310/bookView/StartClass.class" />
     <entry file="file://$PROJECT_DIR$/out/production/CordanceViewerCS2310/cordance/CordanceVeiwer.class" />
     <entry file="file://$PROJECT_DIR$/out/production/CordanceViewerCS2310/cordance/CordanceVeiwerTest.class" />
     <entry file="file://$PROJECT_DIR$/CordanceParser/testBookSourceEmma.txt">
@@ -1130,51 +1107,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookView/CordanceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CordanceParser/PositionTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cordance/CordanceVeiwerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
-          <folding>
-            <marker date="1481509781000" expanded="false" signature="1768:1777" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="1948:1957" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="2098:2107" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="2252:2261" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="2410:2419" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="2591:2600" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="2774:2783" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="2931:2940" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="3081:3090" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="3234:3243" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="3389:3398" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="3554:3563" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="3713:3722" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="3870:3879" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="4025:4034" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="4187:4196" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="4342:4351" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="4499:4508" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="4686:4695" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="4840:4849" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="5001:5010" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="5161:5170" ph="&lt;~&gt;" />
-            <marker date="1481509781000" expanded="false" signature="5317:5326" ph="&lt;~&gt;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1266,13 +1203,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookView/startclass.java">
+    <entry file="file://$PROJECT_DIR$/bookView/StartClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        <state relative-caret-position="135">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookView/DirectoryPusher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cordance/CordanceVeiwerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1481509781000" expanded="false" signature="1768:1777" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="1948:1957" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="2098:2107" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="2252:2261" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="2410:2419" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="2591:2600" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="2774:2783" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="2931:2940" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="3081:3090" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="3234:3243" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="3389:3398" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="3554:3563" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="3713:3722" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="3870:3879" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="4025:4034" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="4187:4196" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="4342:4351" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="4499:4508" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="4686:4695" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="4840:4849" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="5001:5010" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="5161:5170" ph="&lt;~&gt;" />
+            <marker date="1481509781000" expanded="false" signature="5317:5326" ph="&lt;~&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookView/CordanceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>

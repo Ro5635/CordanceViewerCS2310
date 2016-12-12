@@ -1,8 +1,9 @@
 package CordanceParser;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.Map;
@@ -21,6 +22,7 @@ public class ParsedCordance {
 
     /**
      * List of all words in the cordance, new lines and paragraph breaks are denoted by null values
+     * @see WordList
      */
     private WordList wordList;
 
@@ -80,8 +82,36 @@ public class ParsedCordance {
 
             try {
 
-                buffRead = new BufferedReader(new FileReader(fileName));
-                wordScanner = new Scanner(buffRead);
+                //Check to see if it is a URL, if it is a URL handle the URL. Else pass it to buffered reader as a
+                //FileReader, this only runs once per source handed to the cordance. The delay of the minimal additional
+                //overhead is more then offset by the additional capability to use URL's as test files.
+
+                if(true) {
+
+                    buffRead = new BufferedReader(new FileReader(fileName));
+                    wordScanner = new Scanner(buffRead);
+
+                }else{
+
+                    try {
+
+                        URL newURL = new URL(fileName);
+                        URLConnection urlConnection =  newURL.openConnection();
+                        buffRead = new BufferedReader(new InputStreamReader( urlConnection.getInputStream() ));
+
+
+
+
+                    }catch (MalformedURLException e){
+
+                        //Re-throw the the exception as a bad file exception.
+                        throw new InvalidParameterException("The passed URL is malformed, URL: " + fileName);
+                    }catch (IOException e){
+
+                        ///TO DO
+                    }
+
+                }
 
                 //Holds the most recently read word
                 String newWord;
@@ -106,6 +136,22 @@ public class ParsedCordance {
                         String[] breakPointSplit = splitBreakPoint(newLine);
 
                         positionInfo.updateBlockBreakValue(breakPointSplit[0], breakPointSplit[1]);
+
+                    }else{
+                                         /*
+                        * This is an new line (black line)
+                         */
+
+                        //new lines are represented by null in the word list
+                        int newWordID = wordList.addWord(null);
+
+
+                        //add to the wordtable also, this would allow for the user in theory to
+                        //search for new lines.
+                        wordTable.addWord(null, newWordID);
+
+                        //register this with the position object
+                        positionInfo.addWordID(newWordID);
 
                     }
 
