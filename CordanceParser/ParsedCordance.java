@@ -72,7 +72,7 @@ public class ParsedCordance {
 
         //Create variable to track the line number
         long lineNo = 0;
-        
+
 
 
         //Parse each file in turn
