@@ -22,7 +22,7 @@ public class CordanceVeiwerTest {
 	public void test() {
 
 
-		String[] fileLocations = {"C:/Users/ryan/Documents/university/year 2/cordance veiwer/CordanceViewerCS2310/CordanceParser/testBookExpressEmma.txt", "C:/Users/ryan/Documents/university/year 2/cordance veiwer/CordanceViewerCS2310/CordanceParser/testBookExpressMansfeild.txt"};
+		String[] fileLocations = {"C:/Users/ryan/Documents/university/year 2/cordance veiwer/CordanceViewerCS2310/data/emmaEd11.txt", "C:/Users/ryan/Documents/university/year 2/cordance veiwer/CordanceViewerCS2310/data/mansfieldParkEd10.txt"};
 		pcTester = new ParsedCordance(fileLocations);
 		tester = new CordanceVeiwer(pcTester);
 		searchWord = "vex";
@@ -31,7 +31,7 @@ public class CordanceVeiwerTest {
 		System.out.println(tester.getCordance(searchWord, 2));
 
 		//check it returns the correct word
-		assertEquals(tester.getCordance(searchWord, 0), "0: vex");	
+		assertEquals(tester.getCordance(searchWord, 0), "\r"+"0: vex");	
 
 		//check it returns the words before and after the chosen word, in this case its just 1 word
 		assertEquals(tester.getCordance(searchWord, 1), "0: or vex her.");	
