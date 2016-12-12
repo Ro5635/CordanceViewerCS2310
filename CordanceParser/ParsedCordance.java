@@ -72,10 +72,7 @@ public class ParsedCordance {
 
         //Create variable to track the line number
         long lineNo = 0;
-
-        //Create the variable to track the number of succesive empty lines, 3 blank lines in a row
-        //is a indicator of a block break.
-        int noSuccessiveNewLines = 0;
+        
 
 
         //Parse each file in turn
