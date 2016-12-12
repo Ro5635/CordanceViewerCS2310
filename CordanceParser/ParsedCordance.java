@@ -117,7 +117,7 @@ public class ParsedCordance {
                 String newWord;
 
                 //Set the deliminator for tockanisation
-                wordScanner.useDelimiter("--|\\n|\\p{javaWhitespace}+");
+                wordScanner.useDelimiter("--|\\n|\\r|\\p{javaWhitespace}+");
 
 
                 //Read the first lines of the text which contain the title and the author
