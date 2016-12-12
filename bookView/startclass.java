@@ -11,16 +11,17 @@ public class startclass {
 	 */
 	
 	public static void main(String[] args) {
-		DirectoryPusher directoryPusher;
-		try {
-			directoryPusher = new DirectoryPusher(args[0]);
-			Cordance cordance = new Cordance(directoryPusher.getParsedCordance());
-			TUI tui = new TUI(cordance);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
+//		DirectoryPusher directoryPusher;
+//		try {
+//			directoryPusher = new DirectoryPusher(args[0]);
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		ParsedCordance pc = directoryPusher.getParsedCordance();
+//		Cordance cordance = new Cordance(pc);
+//		TUI tui = new TUI(cordance);
+//		System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+//
 	 }
 }
