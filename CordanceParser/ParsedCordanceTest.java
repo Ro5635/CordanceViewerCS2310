@@ -17,11 +17,13 @@ public class ParsedCordanceTest {
     public void testWordCreation(){
 
         //Include the test data file, it is included in the source
-        String[] fileLocations = {"out/production/CordanceViewerCS2310/CordanceParser/testBookSourceEmma.txt", "out/production/CordanceViewerCS2310/CordanceParser/testBookSourcePP.txt"};
+        String[] fileLocations = {"CordanceParser/testBookSourceEmma.txt", "CordanceParser/testBookSourcePP.txt"};
 
         ParsedCordance pc = new ParsedCordance(fileLocations);
 
-        System.out.println(pc.getPositionInfoByWordID(4));
+        System.out.println(pc.getIDsForWord("a"));
+
+
 
 
     }
