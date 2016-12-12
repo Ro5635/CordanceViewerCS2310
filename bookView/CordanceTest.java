@@ -21,10 +21,26 @@ public class CordanceTest {
 		pc = new ParsedCordance(fileLocations);
 		tester = new Cordance(pc);
 		searchWord = "vex";
+		
 	}
 	@Test
 	public void CheckForInvalidWord(){
 		tester.getKWIC("aaaaaaa");
+		tester.getKWIC(" vex");
+		tester.getKWIC(" vex ");
+		//if the program doesnt crash then this is passed
+		//should print need a valid word
+	}
+	@Test
+	public void CheckWiderContext(){
+		tester.getKWIC("vex");//start the cordance with 1 output
+		System.out.println(tester.getWiderContext("0"));
+		//////////////////////////////////////check what it is
+		tester.getKWIC("or");// start with more than 1 id option
+		System.out.println(tester.getWiderContext("1"));
+		
+		System.out.println(tester.getWiderContext("4"));//check eronious 
+		
 	}
 	
 	@Test
@@ -55,6 +71,4 @@ public class CordanceTest {
 		//check it returns the correct words with defauls size of 10
 		assertEquals("hello", tester.getKWIC(searchWord), '\n'+"0: years in the world with very little to distress or vex her. ");			
 	}
-	
-
 }

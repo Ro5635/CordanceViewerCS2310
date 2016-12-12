@@ -2,7 +2,9 @@ package cordance;
 
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 import CordanceParser.ParsedCordance;
 
@@ -38,7 +40,7 @@ public class CordanceVeiwer {
 	public String getCordance(String word, int num){
 		output.clear();
 		String cordance = "";
-		
+		word.replaceAll("\\s","");
 		ArrayList<Integer> temp;// = new ArrayList<Integer>(11);
 		try{
 			temp = parsedcordance.getIDsForWord(word);
@@ -53,8 +55,10 @@ public class CordanceVeiwer {
 				output.add(currentPos);
 			}
 		}catch (InvalidParameterException e){
-			System.out.println("please put in a valid word");
+			System.out.println("please put in a valid word that exists in the text");
 			
+		}catch (NullPointerException e) {
+			System.out.println("please put in a valid word that exists in the text");
 		}
 		return cordance;
 	}
@@ -66,15 +70,30 @@ public class CordanceVeiwer {
 	 * @return
 	 */
 	public String getWiderContext(int num, String kwicID){
+		int kwicIDInt = (Integer.parseInt(kwicID));
 		Map<String, String> wordCompact;
+		String widerContext = "";
 		if(output.isEmpty() == true){
-			wordCompact = "please enter an actual cordance to veiw first";
+			widerContext = "please enter an actual cordance to veiw first";
 		}else{
-			
-			wordCompact += parsedcordance.getPositionInfoByWordID(output.get(Integer.parseInt(kwicID)).intValue());
-			
+			try{
+				wordCompact = parsedcordance.getPositionInfoByWordID(output.get(kwicIDInt));
+				Set<String> wordCompactKeySet = wordCompact.keySet();
+				String KeyWord;
+				Iterator<String> iter = wordCompactKeySet.iterator();
+				while (iter.hasNext()){
+					KeyWord = iter.next();
+					widerContext += KeyWord + wordCompact.get(KeyWord) + '\n' ;
+				}
+				widerContext += '\n';
+				widerContext += "word number: " + output.get(kwicIDInt) + '\n';
+				widerContext += getLineOfCordance(output.get(kwicIDInt), 10, 100);
+				
+			}catch(Exception e){
+				System.out.println("please put in an actual ID that apears in the cordance");
+			}
 		}
-		return wordCompact;
+		return widerContext;
 	}
 	
 	/**
@@ -105,18 +124,4 @@ public class CordanceVeiwer {
 		}
 		return cordanceline;
 	}
-	
-	
-	/**
-	 *  allows reseting of data
-	 * @param passedWordIndex
-	 * @param passedWordCataloge
-	 */
-	public void setData( ParsedCordance passedParsedCordance ) {
-		parsedcordance = passedParsedCordance;
-	}
-	
-	
-	
-	
 }
