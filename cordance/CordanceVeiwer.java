@@ -79,6 +79,14 @@ public class CordanceVeiwer {
 			wordCompact = "" + getLineOfCordance(output.get(Integer.parseInt(kwicID)), num, parsedcordance.getWordListSize());
 		}
 		
+		
+		
+		
+		
+		
+		
+		
+		
 		return wordCompact;
 	}
 	
