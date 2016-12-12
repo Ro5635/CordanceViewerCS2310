@@ -2,6 +2,7 @@ package cordance;
 
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
+import java.util.Map;
 
 import CordanceParser.ParsedCordance;
 
@@ -46,13 +47,14 @@ public class CordanceVeiwer {
 			
 			//loop through the arraylist of indexes of word positions
 			for(Integer currentPos:temp ){
-				cordance += "\r" + ID + ": ";
+				cordance += "\n" + ID + ": ";
 				ID++;
 				cordance += getLineOfCordance(currentPos, num, size);
 				output.add(currentPos);
 			}
 		}catch (InvalidParameterException e){
-			e.toString();
+			System.out.println("please put in a valid word");
+			
 		}
 		return cordance;
 	}
@@ -64,15 +66,13 @@ public class CordanceVeiwer {
 	 * @return
 	 */
 	public String getWiderContext(int num, String kwicID){
-		String wordCompact = "";
+		Map<String, String> wordCompact;
 		if(output.isEmpty() == true){
 			wordCompact = "please enter an actual cordance to veiw first";
 		}else{
 			
-			//wordCompact += parsedcordance.getPositionInfoByWordID(output.get(Integer.parseInt(kwicID)).intValue());
+			wordCompact += parsedcordance.getPositionInfoByWordID(output.get(Integer.parseInt(kwicID)).intValue());
 			
-			//add line to the end
-			wordCompact = "" + getLineOfCordance(output.get(Integer.parseInt(kwicID)), num, parsedcordance.getWordListSize());
 		}
 		return wordCompact;
 	}
