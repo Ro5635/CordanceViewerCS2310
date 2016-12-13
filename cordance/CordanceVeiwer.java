@@ -83,10 +83,10 @@ public class CordanceVeiwer {
 				Iterator<String> iter = wordCompactKeySet.iterator();
 				while (iter.hasNext()){
 					KeyWord = iter.next();
-					widerContext += KeyWord + wordCompact.get(KeyWord) + '\n' ;
+					widerContext += KeyWord + " " + wordCompact.get(KeyWord) + '\n' ;
 				}
 				widerContext += '\n';
-				widerContext += "word number: " + output.get(kwicIDInt) + '\n';
+				widerContext += "word number: " + + output.get(kwicIDInt) + '\n';
 				widerContext += getLineOfCordance(output.get(kwicIDInt), 10, 100);
 				
 			}catch(Exception e){
