@@ -39,7 +39,7 @@ public class CordanceVeiwer {
 	 */
 	public String getCordance(String word, int num){
 		output.clear();
-		String cordance = "";
+		StringBuilder cordance = new StringBuilder();
 		word.replaceAll("\\s","");
 		ArrayList<Integer> temp;// = new ArrayList<Integer>(11);
 		try{
@@ -49,18 +49,22 @@ public class CordanceVeiwer {
 			
 			//loop through the arraylist of indexes of word positions
 			for(Integer currentPos:temp ){
-				cordance += "\n" + ID + ": ";
+				cordance.append("\n");
+				cordance.append(ID);
+				cordance.append(": ");
 				ID++;
-				cordance += getLineOfCordance(currentPos, num, size);
+				cordance.append(getLineOfCordance(currentPos, num, size));
 				output.add(currentPos);
 			}
 		}catch (InvalidParameterException e){
+			System.exit(011);
 			System.out.println("please put in a valid word that exists in the text");
 			
 		}catch (NullPointerException e) {
+			System.exit(100);
 			System.out.println("please put in a valid word that exists in the text");
 		}
-		return cordance;
+		return cordance.toString();
 	}
 	/**
 	 * will return a cordance with wider context and more details using the last output used with num being the
@@ -72,9 +76,9 @@ public class CordanceVeiwer {
 	public String getWiderContext(int num, String kwicID){
 		int kwicIDInt = (Integer.parseInt(kwicID));
 		Map<String, String> wordCompact;
-		String widerContext = "";
+		StringBuilder widerContext = new StringBuilder();
 		if(output.isEmpty() == true){
-			widerContext = "please enter an actual cordance to veiw first";
+			widerContext.append("please enter an actual cordance to veiw first");
 		}else{
 			try{
 				wordCompact = parsedcordance.getPositionInfoByWordID(output.get(kwicIDInt));
@@ -83,17 +87,23 @@ public class CordanceVeiwer {
 				Iterator<String> iter = wordCompactKeySet.iterator();
 				while (iter.hasNext()){
 					KeyWord = iter.next();
-					widerContext += KeyWord + " " + wordCompact.get(KeyWord) + '\n' ;
+					widerContext.append(KeyWord); 
+					widerContext.append(" ");  
+					widerContext.append(wordCompact.get(KeyWord)); 
+					widerContext.append('\n'); 
 				}
-				widerContext += '\n';
-				widerContext += "word number: " + + output.get(kwicIDInt) + '\n';
-				widerContext += getLineOfCordance(output.get(kwicIDInt), 10, 100);
+				widerContext.append('\n');
+				widerContext.append("word number: "); 
+				widerContext.append(output.get(kwicIDInt)); 
+				widerContext.append('\n');
+				widerContext.append( getLineOfCordance(output.get(kwicIDInt), 10, 100));
 				
 			}catch(Exception e){
+				System.exit(101);
 				System.out.println("please put in an actual ID that apears in the cordance");
 			}
 		}
-		return widerContext;
+		return widerContext.toString();
 	}
 	
 	/**
@@ -106,22 +116,23 @@ public class CordanceVeiwer {
 	 * @return
 	 */
 	private String getLineOfCordance (int currentPos , int num, int size){
-		String cordanceline = "";
+		StringBuilder cordanceline = new StringBuilder();
 		//writes the cordance for the num of words left and right
 		for (int i = currentPos - num ;i<currentPos + num +1;i++){
 			if(0 < i && i < size){// if i is in the bounds of the whole array 
 				if(parsedcordance.getWordByID(i) != null){//if the book dosent shows a line brake
-					cordanceline += (parsedcordance.getWordByID(i) + " ");//put word in an array
+					cordanceline.append(parsedcordance.getWordByID(i)); //put word in an array
+					cordanceline.append(" ");
 				}else{
 					//delete all words up to the middle if they have a line brake
 					if(i < currentPos){
-						cordanceline = "";
+						cordanceline = new StringBuilder(); 
 					}else if(i > currentPos){// stop the loop if the linebrake is after middle
 						i = currentPos+num+1;
 					}
 				}				
 			}
 		}
-		return cordanceline;
+		return cordanceline.toString();
 	}
 }

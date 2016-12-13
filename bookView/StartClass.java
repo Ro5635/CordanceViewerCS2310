@@ -24,9 +24,11 @@ public class StartClass {
 					System.out.println("file location not valid");
 				}
 			}catch(ArrayIndexOutOfBoundsException e){
+				System.exit(001);
 				System.out.println("please put in a file location in string args");
 			}
 		}catch(NullPointerException e){
+			System.exit(010);
 			System.out.println("please put in a valid file location");
 		}
 	}

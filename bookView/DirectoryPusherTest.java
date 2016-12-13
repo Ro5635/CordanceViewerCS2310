@@ -19,6 +19,7 @@ public class DirectoryPusherTest {
 		try {
 			tester = new DirectoryPusher("C:/Users/ryan/Documents/university/year 2/cordance veiwer/CordanceViewerCS2310/bookView/testtexts");
 		} catch (FileNotFoundException e) {
+			System.exit(000);
 			System.out.println("you need to put in a corect test directory");
 		}
 	}
