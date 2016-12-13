@@ -47,8 +47,8 @@ public class ParsedCordance {
         positionInfo = new Position();
 
         //Create a new buffered reader
-        BufferedReader buffRead = null;
-        Scanner wordScanner = null;
+        BufferedReader buffRead;
+        Scanner wordScanner;
 
         /*
         Initialise the variable to place the data into
@@ -128,7 +128,7 @@ public class ParsedCordance {
 
                     lineNo++;
 
-                    if (newLine != null && newLine != "") {
+                    if (newLine != null && newLine != "" ) {
 
                         //Defined as the title line for all conforming inputs
 
@@ -138,9 +138,10 @@ public class ParsedCordance {
                         positionInfo.updateBlockBreakValue(breakPointSplit[0], breakPointSplit[1]);
 
                     }else{
-                                         /*
+
+                        /*
                         * This is an new line (black line)
-                         */
+                        */
 
                         //new lines are represented by null in the word list
                         int newWordID = wordList.addWord(null);
@@ -159,10 +160,10 @@ public class ParsedCordance {
 
                 //keep track of the number of successive empty lines, start at 1 because there is only 2
                 //lines to the first break section.
-                int successiveEmptyLines = 1;
+                int successiveEmptyLines = 4;
 
                 //build the regex parser for a break point here outside the loop:
-                String regexAllCaps = "m/^[^\\p{Ll}]*$/";
+                String regexAllCaps = "([A-Z])+";
                 //create the pattern object
                 Pattern patternAllCaps = Pattern.compile(regexAllCaps);
 
@@ -181,20 +182,30 @@ public class ParsedCordance {
                     //if( wordScanner.findInLine("\\A\\S") == null){
                     if (newWord.length() == 0) {
 
-                        if (++successiveEmptyLines == 3) {
+                        successiveEmptyLines++;
+
+                        if (false) {
                             //There is a chance that there is a break point here
-                            boolean found = patternAllCaps.matcher(newWord).matches();
 
-                            if (found) {
+                            //Ensure that this is not the last line in the document
+                            if(wordScanner.hasNext()) {
 
-                                //update the new breakpoint and description, these will be the next two tokens
-                                positionInfo.updateBlockBreakValue(wordScanner.next(), wordScanner.next());
+                                newWord = wordScanner.next();
 
-                                //Reset the number of empty lines
-                                successiveEmptyLines = 0;
+                                boolean found = patternAllCaps.matcher(newWord).matches();
+
+                                if (found && wordScanner.hasNext()) {
+
+                                    //update the new breakpoint and description, these will be the next two tokens
+                                    positionInfo.updateBlockBreakValue(newWord, wordScanner.next());
+
+                                    //Reset the number of empty lines
+                                    successiveEmptyLines = 0;
+                                }
+
                             }
 
-                        } else if(++successiveEmptyLines == 2) {
+                        } else if(successiveEmptyLines == 2) {
 
                         /*
                         * This is an new line (black line)
@@ -202,7 +213,6 @@ public class ParsedCordance {
 
                             //new lines are represented by null in the word list
                             int newWordID = wordList.addWord(null);
-
 
                             //add to the wordtable also, this would allow for the user in theory to
                             //search for new lines.
@@ -214,8 +224,38 @@ public class ParsedCordance {
 
                     } else {
 
-                        //Reset the number of successive empty lines
-                        successiveEmptyLines = 0;
+                        //The new word is not a new line
+
+                        if(successiveEmptyLines == 7  ){
+
+                            //There is a chance that there is a break point here
+
+                            //Ensure that this is not the last line in the document
+                            if(wordScanner.hasNext()) {
+
+                                boolean found = patternAllCaps.matcher(newWord).matches();
+
+                                if (found && wordScanner.hasNext()) {
+
+                                    //update the new breakpoint and description, these will be the next two tokens
+                                    positionInfo.updateBlockBreakValue(newWord, wordScanner.next());
+
+                                }
+
+                            }
+
+
+                            //Reset the number of successive empty lines
+                            successiveEmptyLines = 0;
+
+                        }else{
+
+                            //Reset the number of successive empty lines
+                            successiveEmptyLines = 0;
+                        }
+
+
+
 
                         int newWordID = wordList.addWord(newWord);
 

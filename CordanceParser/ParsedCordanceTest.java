@@ -2,7 +2,7 @@ package CordanceParser;
 
 import org.junit.Test;
 
-
+import java.util.ArrayList;
 
 
 /**
@@ -17,21 +17,43 @@ public class ParsedCordanceTest {
     public void testWordCreation(){
 
         //Include the test data file, it is included in the source
-        String[] fileLocations = {"C:/Users/ryan/Documents/university/year 2/cordance veiwer/CordanceViewerCS2310/data/emmaEd11.txt", "C:/Users/ryan/Documents/university/year 2/cordance veiwer/CordanceViewerCS2310/data/mansfieldParkEd10.txt"};
+        String[] fileLocations2 = {"CordanceParser/testBookSourceEmma.txt" ,"CordanceParser/testBookExpressMansfeild.txt"};
+        String[] fileLocations = {"cordance/emmaEd11Test.txt", "cordance/mansfieldParkEd10Test.txt"};
 
-        ParsedCordance pc = new ParsedCordance(fileLocations);
 
-        System.out.println(pc.getIDsForWord("a"));
+        ParsedCordance pc = new ParsedCordance(fileLocations2);
 
-        for(int i =0; i <= 15; i++){
 
-            System.out.println( pc.getWordByID(i)  );
+
+        ArrayList<Integer> test =  pc.getIDsForWord("Ward");
+
+        System.out.println("TRY: " + test.size());
+
+        for (Integer a: test) {
+
+            System.out.println(a);
 
         }
 
-        System.out.println(pc.getIDsForWord(null));
+//
+//        System.out.println("Value = " + pc.getWordByID(24812));
+//
+//        for(int i = (24812 - 10); i < (24812 + 10); i++ ){
+//            System.out.println( pc.getWordByID(i) );
+//        }
+//
+//
+//        System.out.println(pc.getIDsForWord("a"));
+//
+//        for(int i =0; i <= 23; i++){
+//
+//            System.out.print( pc.getWordByID(i) + " "  );
+//
+//        }
 
-        System.out.println("THIS: " +  pc.getWordByID(3) );
+       //System.out.println(pc.getIDsForWord(null));
+
+        //System.out.println("THIS: " +  pc.getWordByID(3) );
 
 
 
