@@ -20,16 +20,17 @@ public class StartClass {
 					ParsedCordance pc = directoryPusher.getParsedCordance();
 					Cordance cordance = new Cordance(pc);
 					TUI tui = new TUI(cordance);
+					//set up all apropriate objects for the program to start
 				} catch (FileNotFoundException e) {
 					System.out.println("file location not valid");
 				}
 			}catch(ArrayIndexOutOfBoundsException e){
-				System.exit(001);
 				System.out.println("please put in a file location in string args");
+				System.exit(001);
 			}
 		}catch(NullPointerException e){
-			System.exit(010);
 			System.out.println("please put in a valid file location");
+			System.exit(010);
 		}
 	}
 }

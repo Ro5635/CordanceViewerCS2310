@@ -60,8 +60,9 @@ public class Cordance implements Controller{
      
         currentSize = defaultsize;
      
-        value =cordanceVeiwer.getCordance(currentWord, new Integer(10));      
+        value =cordanceVeiwer.getCordance(currentWord, new Integer(10));//actualy running the cordance viewer    
     }else{
+    	//if the file is not valid then this will return to the user instead of the cordance
     	value = "file not valid please fix.";
     }
     return value;
@@ -82,7 +83,7 @@ public class Cordance implements Controller{
  
     	currentWord = word;
  
-    	value =  cordanceVeiwer.getCordance(currentWord, new Integer(currentSize));
+    	value =  cordanceVeiwer.getCordance(currentWord, new Integer(currentSize));//asking for a corcance with the new intager
 	}else{
 		value = "file not valid please fix.";
 	}
@@ -100,7 +101,7 @@ public class Cordance implements Controller{
 	String value = "";
 	  if(parsedCordance != null){
 		  System.out.println(kwicID);
-    value =  cordanceVeiwer.getWiderContext( currentSize , kwicID);
+    value =  cordanceVeiwer.getWiderContext( currentSize , kwicID);//returns the wider context of the current size
 	}else{
 		value = "file not valid please fix.";
 	}

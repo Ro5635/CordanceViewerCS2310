@@ -57,12 +57,11 @@ public class CordanceVeiwer {
 				output.add(currentPos);
 			}
 		}catch (InvalidParameterException e){
+			System.out.println("please put in a valid word that exists in the text");
 			System.exit(011);
-			System.out.println("please put in a valid word that exists in the text");
-			
 		}catch (NullPointerException e) {
-			System.exit(100);
 			System.out.println("please put in a valid word that exists in the text");
+			System.exit(100);
 		}
 		return cordance.toString();
 	}
@@ -80,18 +79,20 @@ public class CordanceVeiwer {
 		if(output.isEmpty() == true){
 			widerContext.append("please enter an actual cordance to veiw first");
 		}else{
-			try{
+			try{//makes a word out of data in the structure position 
 				wordCompact = parsedcordance.getPositionInfoByWordID(output.get(kwicIDInt));
 				Set<String> wordCompactKeySet = wordCompact.keySet();
 				String KeyWord;
 				Iterator<String> iter = wordCompactKeySet.iterator();
-				while (iter.hasNext()){
+				while (iter.hasNext()){//iterate through the stucture for the key and value
+					//the key is the type and the value is the asigned value so it needs to print the console
 					KeyWord = iter.next();
 					widerContext.append(KeyWord); 
 					widerContext.append(" ");  
 					widerContext.append(wordCompact.get(KeyWord)); 
 					widerContext.append('\n'); 
 				}
+				//add word data on the end
 				widerContext.append('\n');
 				widerContext.append("word number: "); 
 				widerContext.append(output.get(kwicIDInt)); 
@@ -99,8 +100,8 @@ public class CordanceVeiwer {
 				widerContext.append( getLineOfCordance(output.get(kwicIDInt), 10, 100));
 				
 			}catch(Exception e){
-				System.exit(101);
 				System.out.println("please put in an actual ID that apears in the cordance");
+				System.exit(101);
 			}
 		}
 		return widerContext.toString();

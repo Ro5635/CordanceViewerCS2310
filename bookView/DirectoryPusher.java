@@ -26,7 +26,7 @@ public class DirectoryPusher {
 		    books[i] = f.getAbsolutePath();
 		    i++;
 		}
-    	parsedCordance = new ParsedCordance(books);
+    	parsedCordance = new ParsedCordance(books);//sets up a parsedcordance with the files it finds
 	}
 	public ParsedCordance getParsedCordance(){
 		return parsedCordance;

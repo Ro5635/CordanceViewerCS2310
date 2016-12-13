@@ -6,7 +6,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import CordanceParser.ParsedCordance;
-import cordance.CordanceVeiwer;
 
 public class CordanceTest {
 	
@@ -17,7 +16,7 @@ public class CordanceTest {
 	
 	@Before
 	public void SetUp(){
-		String[] fileLocations = {"C:/Users/ryan/Documents/university/year 2/cordance veiwer/CordanceViewerCS2310/cordance/emmaEd11Test.txt","C:/Users/ryan/Documents/university/year 2/cordance veiwer/CordanceViewerCS2310/cordance/mansfieldParkEd10Test.txt"};
+		String[] fileLocations = {"/cordance/emmaEd11Test.txt","/cordance/mansfieldParkEd10Test.txt"};
 		pc = new ParsedCordance(fileLocations);
 		tester = new Cordance(pc);
 		searchWord = "vex";

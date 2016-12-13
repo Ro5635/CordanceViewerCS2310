@@ -1,10 +1,6 @@
 package cordance;
 
 import static org.junit.Assert.*;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,15 +8,12 @@ import CordanceParser.ParsedCordance;
 
 public class CordanceVeiwerTest {
 
-	private ArrayList<String> wordIndex;
-	private HashMap<String, ArrayList<Integer>> wordCataloge;
-
 	private String searchWord = "hello";
 	private CordanceVeiwer tester;
 	private ParsedCordance pcTester;
 	@Before
 	public void SetUp(){
-		String[] fileLocations = {"C:/Users/ryan/Documents/university/year 2/cordance veiwer/CordanceViewerCS2310/data/emmaEd11.txt","C:/Users/ryan/Documents/university/year 2/cordance veiwer/CordanceViewerCS2310/data/mansfieldParkEd10.txt"};
+		String[] fileLocations = {"/cordance/emmaEd11Test.txt","/cordance/mansfieldParkEd10Test.txt"};
 		pcTester = new ParsedCordance(fileLocations);
 		tester = new CordanceVeiwer(pcTester);
 		searchWord = "vex";
