@@ -44,7 +44,7 @@ public class CordanceVeiwer {
 		ArrayList<Integer> temp;// = new ArrayList<Integer>(11);
 		try{
 			temp = parsedcordance.getIDsForWord(word);
-			int ID = 0;//id for output to the user which word to look at in the extended view
+			int ID = 1;//id for output to the user which word to look at in the extended view
 			int size = parsedcordance.getWordListSize();
 			
 			//loop through the arraylist of indexes of word positions
@@ -73,7 +73,7 @@ public class CordanceVeiwer {
 	 * @return
 	 */
 	public String getWiderContext(int num, String kwicID){
-		int kwicIDInt = (Integer.parseInt(kwicID));
+		int kwicIDInt = (Integer.parseInt(kwicID)) - 1;
 		Map<String, String> wordCompact;
 		StringBuilder widerContext = new StringBuilder();
 		if(output.isEmpty() == true){
