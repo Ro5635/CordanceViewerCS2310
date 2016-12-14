@@ -21,13 +21,13 @@ public class CordanceVeiwerTest {
 	@Test
 	public void TestCordance() {
 		//check it returns the correct word
-		assertEquals("hello", tester.getCordance(searchWord, 0), '\n'+"0: vex ");	
+		assertEquals("hello", tester.getCordance(searchWord, 0), '\n'+"1: vex ");	
 
 		//check it returns the words before and after the chosen word, in this case its just 1 word
-		assertEquals(tester.getCordance(searchWord, 1), '\n'+"0: or vex her. ");	
+		assertEquals(tester.getCordance(searchWord, 1), '\n'+"1: or vex her. ");	
 		
 		//check that the spaces at the end are removed
-		assertEquals(tester.getCordance(searchWord, 2), '\n'+"0: distress or vex her. ");
+		assertEquals(tester.getCordance(searchWord, 2), '\n'+"1: distress or vex her. ");
 		
 	}
 	public void CheckInvalidDate(){

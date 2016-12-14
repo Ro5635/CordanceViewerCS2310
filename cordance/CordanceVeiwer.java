@@ -94,10 +94,7 @@ public class CordanceVeiwer {
 				}
 				//add word data on the end
 				widerContext.append('\n');
-				widerContext.append("word number: "); 
-				widerContext.append(output.get(kwicIDInt)); 
-				widerContext.append('\n');
-				widerContext.append( getLineOfCordance(output.get(kwicIDInt), 10, 100));
+				widerContext.append( getLineOfCordance(output.get(kwicIDInt), 10, 1000000000));
 				
 			}catch(Exception e){
 				System.out.println("please put in an actual ID that apears in the cordance");
