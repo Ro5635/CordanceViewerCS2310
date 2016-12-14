@@ -58,10 +58,8 @@ public class CordanceVeiwer {
 			}
 		}catch (InvalidParameterException e){
 			System.out.println("please put in a valid word that exists in the text");
-			System.exit(011);
 		}catch (NullPointerException e) {
 			System.out.println("please put in a valid word that exists in the text");
-			System.exit(100);
 		}
 		return cordance.toString();
 	}
@@ -98,7 +96,6 @@ public class CordanceVeiwer {
 				
 			}catch(Exception e){
 				System.out.println("please put in an actual ID that apears in the cordance");
-				System.exit(101);
 			}
 		}
 		return widerContext.toString();
