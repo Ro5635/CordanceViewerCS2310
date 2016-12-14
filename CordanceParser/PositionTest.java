@@ -236,6 +236,26 @@ public class PositionTest {
 
 
 
+    /**
+     * Test that empty breakpoints can not be added to the position
+     *
+     */
+    @Test
+    public void testEmptyBreaks() {
+
+        positionInfo.updateBlockBreakValue(" ", "VALUE");
+
+        positionInfo.addWordID(1);
+
+        Map<String, String>  positionTest = positionInfo.getPositionInfoForWordID(1);
+
+        assertEquals("Test that a empty value is not saved", null, positionTest.get("VALUE") );
+
+
+    }
+
+
+
 
 
 }

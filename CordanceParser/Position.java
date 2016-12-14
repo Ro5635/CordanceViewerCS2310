@@ -112,7 +112,7 @@ public class Position {
 
                 //If the position value is not null add the position name and its value to the map, null values are in feilds
                 //used in other texts but not this current text.
-                if (positionValue != null) {
+                if (positionValue != null && positionValue != " ") {
                     positionInfo.put(listedBlockBreakes.get(indexCurrentBreakName), positionValue);
                 }
 

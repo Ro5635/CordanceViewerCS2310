@@ -44,7 +44,7 @@ import java.util.HashMap;
 
             wordTable.put(word , existingIndex);
 
-        }else{
+        }else if(word != "" && word != null && word != " "){
             //Create the new record
 
             ArrayList<Integer> newIndexArray = new ArrayList<Integer>();

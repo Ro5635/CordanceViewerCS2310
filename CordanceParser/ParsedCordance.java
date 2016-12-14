@@ -1,6 +1,7 @@
 package CordanceParser;
 
 import java.io.*;
+import java.net.InterfaceAddress;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -120,18 +121,18 @@ public class ParsedCordance {
                 wordScanner.useDelimiter("--|\\r|\\n|\\p{javaWhitespace}+");
 
 
-                //Read the first lines of the text which contain the title and the author
+                //Read the first 3 lines of the text which contain the title and the author
                 ///and add these to the position object
                 while (wordScanner.hasNext() && lineNo < 3) {
 
                     String newLine = wordScanner.nextLine();
 
+
                     lineNo++;
 
-                    if (newLine != null && newLine != "" ) {
+                    if (newLine != null && newLine.replaceAll("[^a-zA-Z ]", "") != "" ) {
 
-                        //Defined as the title line for all conforming inputs
-
+                        //First line title and third line author for all conforming inputs
                         //split the break line into the break name and its value
                         String[] breakPointSplit = splitBreakPoint(newLine);
 
@@ -140,7 +141,7 @@ public class ParsedCordance {
                     }else{
 
                         /*
-                        * This is an new line (black line)
+                        * This is an new line (blank line)
                         */
 
                         //new lines are represented by null in the word list
@@ -158,8 +159,11 @@ public class ParsedCordance {
 
                 }//End title and author special read
 
-                //keep track of the number of successive empty lines, start at 1 because there is only 2
-                //lines to the first break section.
+
+
+
+                //keep track of the number of successive empty lines, start at 4 because there is only 1
+                //line to the first break section.
                 int successiveEmptyLines = 4;
 
                 //build the regex parser for a break point here outside the loop:
@@ -167,49 +171,45 @@ public class ParsedCordance {
                 //create the pattern object
                 Pattern patternAllCaps = Pattern.compile(regexAllCaps);
 
+                //Number of paragraphss
+                //This is started at minus two to account for the leading lines as per the text specification
+                int paragraphNum = -2;
+
+                //boolean to aid tracking of paragraph number, the transition from empty line to a normal content
+                //line marks a paragraph start
+                boolean paragraphTransition = true;
+
+                //Register the paragraph breakpoint
+                positionInfo.updateBlockBreakValue("Paragraph", "0");
+
+
 
                 //Go through the rest of the text, detecting any block sections along the way
                 //by there 3 blank line head and all capital nature.
                 while (wordScanner.hasNext()) {
 
-                    newWord = wordScanner.next();
+                    //remove all punctuation and set to lower case, save teh original value for world listing
+                    String originalWord = wordScanner.next();;
+                    newWord = originalWord.replaceAll("[^a-zA-Z ]", "").toLowerCase();                             //CLEAN UP
 
-                    lineNo++;   //wordNo NOT lineNo
+                    lineNo++;                                                                                   //wordNo NOT lineNo
 
                     //If it is an new line place a null.
 
                     //REGEX find blank lines or length == 0 speed comparison
                     //if( wordScanner.findInLine("\\A\\S") == null){
+
                     if (newWord.length() == 0) {
 
                         successiveEmptyLines++;
 
-                        if (false) {
-                            //There is a chance that there is a break point here
 
-                            //Ensure that this is not the last line in the document
-                            if(wordScanner.hasNext()) {
-
-                                newWord = wordScanner.next();
-
-                                boolean found = patternAllCaps.matcher(newWord).matches();
-
-                                if (found && wordScanner.hasNext()) {
-
-                                    //update the new breakpoint and description, these will be the next two tokens
-                                    positionInfo.updateBlockBreakValue(newWord, wordScanner.next());
-
-                                    //Reset the number of empty lines
-                                    successiveEmptyLines = 0;
-                                }
-
-                            }
-
-                        } else if(successiveEmptyLines == 2) {
+                        if(successiveEmptyLines == 2) {
 
                         /*
-                        * This is an new line (black line)
+                        * This is an new line (blank line)
                          */
+                            paragraphTransition = true;
 
                             //new lines are represented by null in the word list
                             int newWordID = wordList.addWord(null);
@@ -233,12 +233,12 @@ public class ParsedCordance {
                             //Ensure that this is not the last line in the document
                             if(wordScanner.hasNext()) {
 
-                                boolean found = patternAllCaps.matcher(newWord).matches();
+                                boolean found = patternAllCaps.matcher(originalWord).matches();
 
                                 if (found && wordScanner.hasNext()) {
 
                                     //update the new breakpoint and description, these will be the next two tokens
-                                    positionInfo.updateBlockBreakValue(newWord, wordScanner.next());
+                                    positionInfo.updateBlockBreakValue(originalWord, wordScanner.next());
 
                                 }
 
@@ -254,10 +254,20 @@ public class ParsedCordance {
                             successiveEmptyLines = 0;
                         }
 
+                        if(paragraphTransition){
+
+                            paragraphNum++;
+
+                            //update the count in the position object
+                            positionInfo.updateBlockBreakValue("Paragraph", Integer.toString(paragraphNum) );
+
+                            paragraphTransition = false;
+                        }
 
 
 
-                        int newWordID = wordList.addWord(newWord);
+                        //The original version of the new word with any additional grammar must be added to the word list.
+                        int newWordID = wordList.addWord(originalWord);
 
                         //Add the word to the positionInfo object
                         positionInfo.addWordID(newWordID);
@@ -305,14 +315,14 @@ public class ParsedCordance {
         String breakPointName = splitLine[0];
 
         //The remainder of the array is the value of the breakpoint
-        String breakPointValue = "";
+        String breakPointValue;
 
         //Use string builder in the place of concatenating the rest of the string as it is faster ( O(n) ).
         StringBuilder stringBuilder = new StringBuilder();
 
         for (int i = 1; i < splitLine.length; i++) {
 
-            stringBuilder.append(splitLine[i]);
+            stringBuilder.append(splitLine[i] + " ");
 
         }
 
@@ -340,7 +350,11 @@ public class ParsedCordance {
      */
     public ArrayList<Integer> getIDsForWord(String word) throws InvalidParameterException {
 
+        //prepare the passed value for search, this means removing punctuation and setting to lowercase.
+        word = word.replaceAll("[^a-zA-Z ]", "").toLowerCase();
+
         return wordTable.getWordIDs(word);
+
     }
 
     /**

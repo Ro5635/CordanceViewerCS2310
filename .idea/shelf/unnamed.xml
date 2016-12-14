@@ -1,0 +1,34 @@
+<changelist name="unnamed" date="1481585461066" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/unnamed/shelved.patch" />
+  <option name="DESCRIPTION" value="" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/CordanceViewerCS2310/bookView/CordanceTest.class" />
+    <option name="AFTER_PATH" value="out/production/CordanceViewerCS2310/bookView/CordanceTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/unnamed/CordanceTest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/CordanceViewerCS2310/bookView/Cordance.class" />
+    <option name="AFTER_PATH" value="out/production/CordanceViewerCS2310/bookView/Cordance.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/unnamed/Cordance.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/CordanceViewerCS2310/bookView/StartClass.class" />
+    <option name="AFTER_PATH" value="out/production/CordanceViewerCS2310/bookView/StartClass.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/unnamed/StartClass.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/CordanceViewerCS2310/cordance/CordanceVeiwer.class" />
+    <option name="AFTER_PATH" value="out/production/CordanceViewerCS2310/cordance/CordanceVeiwer.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/unnamed/CordanceVeiwer.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/CordanceViewerCS2310/bookView/DirectoryPusher.class" />
+    <option name="AFTER_PATH" value="out/production/CordanceViewerCS2310/bookView/DirectoryPusher.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/unnamed/DirectoryPusher.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/CordanceViewerCS2310/cordance/CordanceVeiwerTest.class" />
+    <option name="AFTER_PATH" value="out/production/CordanceViewerCS2310/cordance/CordanceVeiwerTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/unnamed/CordanceVeiwerTest.class" />
+  </binary>
+</changelist>
