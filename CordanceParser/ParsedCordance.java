@@ -83,6 +83,10 @@ public class ParsedCordance {
 
             try {
 
+                //Register the the change in the source text
+                positionInfo.registerSourceTextChange();
+
+
                 //Check to see if it is a URL, if it is a URL handle the URL. Else pass it to buffered reader as a
                 //FileReader, this only runs once per source handed to the cordance. The delay of the minimal additional
                 //overhead is more then offset by the additional capability to use URL's as test files.
@@ -121,9 +125,12 @@ public class ParsedCordance {
                 wordScanner.useDelimiter("--|\\r|\\n|\\p{javaWhitespace}+");
 
 
+                //Track the line number
+                int readlines = 0;
+
                 //Read the first 3 lines of the text which contain the title and the author
                 ///and add these to the position object
-                while (wordScanner.hasNext() && lineNo < 3) {
+                while (wordScanner.hasNext() && readlines < 3) {
 
                     String newLine = wordScanner.nextLine();
 
@@ -156,6 +163,8 @@ public class ParsedCordance {
                         positionInfo.addWordID(newWordID);
 
                     }
+
+                    readlines++;
 
                 }//End title and author special read
 
