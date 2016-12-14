@@ -116,8 +116,14 @@ public class CordanceVeiwer {
 		for (int i = currentPos - num ;i<currentPos + num +1;i++){
 			if(0 < i && i < size){// if i is in the bounds of the whole array 
 				if(parsedcordance.getWordByID(i) != null){//if the book dosent shows a line brake
+					if (i == currentPos){
+					cordanceline.append(" ");
+					cordanceline.append(parsedcordance.getWordByID(i)); //put word in an array
+					cordanceline.append("  ");
+					}else{
 					cordanceline.append(parsedcordance.getWordByID(i)); //put word in an array
 					cordanceline.append(" ");
+					}
 				}else{
 					//delete all words up to the middle if they have a line brake
 					if(i < currentPos){
