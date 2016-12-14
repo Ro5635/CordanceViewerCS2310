@@ -82,6 +82,8 @@ public class CordanceVeiwer {
 				Set<String> wordCompactKeySet = wordCompact.keySet();
 				String KeyWord;
 				Iterator<String> iter = wordCompactKeySet.iterator();
+				widerContext.append('\n');  
+				widerContext.append('\n'); 
 				while (iter.hasNext()){//iterate through the stucture for the key and value
 					//the key is the type and the value is the asigned value so it needs to print the console
 					KeyWord = iter.next();
