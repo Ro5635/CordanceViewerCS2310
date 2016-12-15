@@ -1,7 +1,6 @@
 package CordanceParser;
 
 import java.io.*;
-import java.net.InterfaceAddress;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -66,7 +65,7 @@ public class ParsedCordance {
          *
          * TO DO
 
-         Use huristics based on the file size to estimate a suitable initial capacity, for now set
+         Use heuristics based on the file size to estimate a suitable initial capacity, for now set
          a reasonable number....
          */
 
@@ -275,6 +274,7 @@ public class ParsedCordance {
 
 
 
+
                         //The original version of the new word with any additional grammar must be added to the word list.
                         int newWordID = wordList.addWord(originalWord);
 
@@ -311,9 +311,12 @@ public class ParsedCordance {
 
     }
 
+
     /**
+     * This separates a breakpoint into the value and the title, for example is the string "Title Emma's Book" was passed then
+     * the string {"Title", "Emma's Book"} would be feturned by this function.
      * @param breakpointLine
-     * @return
+     * @return  String[] breakPointName , breakPointValue
      */
     private String[] splitBreakPoint(String breakpointLine) {
 
@@ -343,8 +346,9 @@ public class ParsedCordance {
 
 
     /**
-     * @param wordID
-     * @return
+     * This gets the word that is recorded for a given wordID, every occerance of a word in the cordance has a unique wordID.
+     * @param wordID The integer value of wordID
+     * @return String represented by the passed wordID
      * @throws InvalidParameterException
      */
     public String getWordByID(int wordID) throws InvalidParameterException {
@@ -353,9 +357,13 @@ public class ParsedCordance {
     }
 
     /**
-     * @param word
-     * @return
+     * This gets the WordIDs that match a given string, this allows for the searching of the cordance as any wordIDs that
+     * match the passed string will be returned in the ArrayLIst of integers as wordIDs. These wordIds can be used to with
+     * the getWordByID method to get the origional string represented by each wordID.
+     * @param word The string to get the wordIDs for
+     * @return ArrayList of WordIDs
      * @throws InvalidParameterException
+     * @see String getWordByID()
      */
     public ArrayList<Integer> getIDsForWord(String word) throws InvalidParameterException {
 
@@ -367,6 +375,9 @@ public class ParsedCordance {
     }
 
     /**
+     * Gets the position information for a wordID, this is returned as a map of the breakpoints. For example it would
+     * return the title, author and paragraph number of a given wordID.
+     *
      * @param wordID
      * @return
      * @throws InvalidParameterException

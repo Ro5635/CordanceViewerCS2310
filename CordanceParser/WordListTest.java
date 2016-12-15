@@ -66,6 +66,7 @@ public class WordListTest {
      */
     @Test(expected=InvalidParameterException.class)
     public void testInvalidParameterException() {
+        //The bellow number is well beyond the current index length and should throw an exception
         wl.getWord(5635);
 
     }
