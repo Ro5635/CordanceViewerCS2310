@@ -11,7 +11,7 @@ import java.util.function.IntBinaryOperator;
 
 /**
  * Position class tracks the breakpoints used within the cordance, the breakpoint values are recorded for each of the
- * wordIDs that are passed to it. The break points are then accesed using the wordID.
+ * wordIDs that are passed to it. The break points are then accessed using the wordID.
  *
  * @author Robert Curran
  */

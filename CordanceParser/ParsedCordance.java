@@ -90,32 +90,10 @@ public class ParsedCordance {
                 //FileReader, this only runs once per source handed to the cordance. The delay of the minimal additional
                 //overhead is more then offset by the additional capability to use URL's as test files.
 
-                if(true) {
 
                     buffRead = new BufferedReader(new FileReader(fileName));
                     wordScanner = new Scanner(buffRead);
 
-                }else{
-
-                    try {
-
-                        URL newURL = new URL(fileName);
-                        URLConnection urlConnection =  newURL.openConnection();
-                        buffRead = new BufferedReader(new InputStreamReader( urlConnection.getInputStream() ));
-
-
-
-
-                    }catch (MalformedURLException e){
-
-                        //Re-throw the the exception as a bad file exception.
-                        throw new InvalidParameterException("The passed URL is malformed, URL: " + fileName);
-                    }catch (IOException e){
-
-                        ///TO DO
-                    }
-
-                }
 
                 //Holds the most recently read word
                 String newWord;
@@ -323,10 +301,10 @@ public class ParsedCordance {
         //Split the line on each observance of a space
         String[] splitLine = breakpointLine.split(" ");
 
-        //Get the name of the breakpoint
-        String breakPointName = splitLine[0];
+        //Get the name of the breakpoint, strip the punctuation from the name
+        String breakPointName = splitLine[0].replaceAll("[^a-zA-Z ]", "");
 
-        //The remainder of the array is the value of the breakpoint
+        //The remainder of the array is the value of the breakpoint, the punctuation is left in the value
         String breakPointValue;
 
         //Use string builder in the place of concatenating the rest of the string as it is faster ( O(n) ).
